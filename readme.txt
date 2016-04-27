@@ -3,8 +3,7 @@ Theme Name: Flexflux
 Theme URI: http://web-profile.net/wordpress/themes/flexflux/
 Contributors: webvitaly
 Donate link: http://web-profile.net/donate/
-License: GPLv3
-License URI: http://www.gnu.org/licenses/gpl.html
+
 
 Responsive and flexible theme. Features: 6 layouts (1, 2 or 3 columns), widget-ready sidebars, Search Engines Friendly, WooCommerce support and much more. More info at http://web-profile.net/flexflux/
 
