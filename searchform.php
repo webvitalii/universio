@@ -1,0 +1,13 @@
+
+<div class="search-wrap">
+	<form action="<?php echo esc_url( home_url( '/' ) ); ?>" method="get" class="form-inline">
+		<div class="form-group">
+			<fieldset>
+				<div class="input-group">
+					<input type="search" value="<?php echo esc_attr( get_search_query() ); ?>" class="input-medium form-control" name="s">
+				</div>
+				<button type="submit" class="btn btn-primary"><i class="ionicon ion-ios-search-strong icon-20"></i> <?php echo esc_attr( __( 'Search', 'flexflux' ) ); ?></button>
+			</fieldset>
+		</div>
+	</form>
+</div>

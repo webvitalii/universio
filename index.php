@@ -1,0 +1,39 @@
+<?php get_header(); ?>
+
+<?php get_sidebar( 'before-content' ); ?>
+
+<?php get_template_part( 'template-parts/wrap', 'before' ); ?>
+
+				<?php if (have_posts()) : ?>
+
+					<?php echo flexflux_nav(); ?>
+
+					<?php while ( have_posts() ) : the_post(); // the loop ?>
+
+						<?php get_template_part( 'content' ); ?>
+
+						<?php comments_template( '', true ); ?>
+
+					<?php endwhile; // end of the loop ?>
+
+					<?php echo flexflux_nav( 'bottom' ); ?>
+
+				<?php else : ?>
+
+					<article class="post no-results not-found">
+						<header class="entry-header page-header">
+							<h1 class="entry-title"><?php _e( 'No posts to display', 'flexflux' ); ?></h1>
+						</header><!-- .entry-header -->
+
+						<div class="entry-content">
+							<?php get_search_form(); ?>
+						</div><!-- .entry-content -->
+					</article><!-- #post-0 -->
+
+				<?php endif; ?>
+
+<?php get_template_part( 'template-parts/wrap', 'after' ); ?>
+
+<?php get_sidebar( 'after-content' ); ?>
+
+<?php get_footer(); ?>
