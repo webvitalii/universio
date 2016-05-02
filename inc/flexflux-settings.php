@@ -10,9 +10,9 @@ if ( ! defined( 'ABSPATH' ) ) { // prevent full path disclosure
 
 
 function flexflux_menu() { // add menu item
-	add_theme_page(__( 'Flexflux Settings', 'flexflux' ), __( 'Flexflux Settings', 'flexflux' ), 'manage_options', 'flexflux', 'flexflux_settings');
-	//add_menu_page( __( 'Flexflux Settings', 'flexflux' ), __( 'Flexflux Settings', 'flexflux' ),
-	//	'manage_options', 'flexflux', 'flexflux_settings', 'dashicons-layout', 45 );
+	//add_theme_page(__( 'Flexflux Settings', 'flexflux' ), __( 'Flexflux Settings', 'flexflux' ), 'manage_options', 'flexflux', 'flexflux_settings');
+	add_menu_page( __( 'Flexflux Settings', 'flexflux' ), __( 'Flexflux Settings', 'flexflux' ),
+		'manage_options', 'flexflux', 'flexflux_settings', 'dashicons-layout', 45 );
 }
 add_action('admin_menu', 'flexflux_menu');
 
