@@ -11,7 +11,8 @@ function flexflux_default_settings() {
 		'layout' => 'content-sidebar',
 		'excerpt_or_content_in_list' => 'excerpt',
 		'code_head' => '',
-		'code_footer' => ''
+		'code_footer' => '',
+		'use_cdn' => 0
 	);
 	return $settings;
 }

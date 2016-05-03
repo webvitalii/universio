@@ -15,21 +15,34 @@ if ( ! isset( $content_width ) ) {
 
 if ( ! function_exists( 'flexflux_enqueue_scripts' ) ) :
 	function flexflux_enqueue_scripts() {
-
+		
+		$settings = flexflux_get_settings();
+		if( $settings['use_cdn'] == 1 OR $settings['use_cdn'] == '1' ) {
+			$ionicon_path = '//code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css';
+			$bootstrap_path = '//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css';
+			$bootstrap_theme_path = '//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css';
+			$bootstrap_script_path = '//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js';
+		} else {
+			$ionicon_path = get_template_directory_uri() . '/assets/ionicons/css/ionicons.css';
+			$bootstrap_path = get_template_directory_uri() . '/assets/bootstrap/css/bootstrap.css';
+			$bootstrap_theme_path = get_template_directory_uri() . '/assets/bootstrap/css/bootstrap-theme.css';
+			$bootstrap_script_path = get_template_directory_uri() . '/assets/bootstrap/js/bootstrap.js';
+		}
+		
 		if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 			wp_enqueue_script( 'comment-reply' );
 		}
 
-		//wp_enqueue_script( 'flexflux-bootstrap-script', get_template_directory_uri() . '/assets/bootstrap/js/bootstrap.js', array( 'jquery' ), FLEXFLUX_THEME_VERSION );
+		//wp_enqueue_script( 'flexflux-bootstrap-script', $bootstrap_script_path, array( 'jquery' ), FLEXFLUX_THEME_VERSION );
 		wp_enqueue_script( 'flexflux-script', get_template_directory_uri() . '/assets/js/flexflux.js', array( 'jquery' ), FLEXFLUX_THEME_VERSION );
 		
-		wp_enqueue_style( 'flexflux-ionicons-style', get_template_directory_uri() . '/assets/ionicons/css/ionicons.css', array(), FLEXFLUX_THEME_VERSION, 'all' );
+		wp_enqueue_style( 'flexflux-ionicons-style', $ionicon_path, array(), FLEXFLUX_THEME_VERSION, 'all' );
 		
 		wp_enqueue_style( 'flexflux-flexify-style', get_template_directory_uri() . '/assets/flexify/css/flexify.css', array(), FLEXFLUX_THEME_VERSION, 'all' );
 		
-		wp_enqueue_style( 'flexflux-bootstrap-style', get_template_directory_uri() . '/assets/bootstrap/css/bootstrap.css', array(), FLEXFLUX_THEME_VERSION, 'all' );
+		wp_enqueue_style( 'flexflux-bootstrap-style', $bootstrap_path, array(), FLEXFLUX_THEME_VERSION, 'all' );
 		
-		//wp_enqueue_style( 'flexflux-bootstrap-theme-style', get_template_directory_uri() . '/assets/bootstrap/css/bootstrap-theme.css', array(), FLEXFLUX_THEME_VERSION, 'all' );
+		//wp_enqueue_style( 'flexflux-bootstrap-theme-style', $bootstrap_theme_path, array(), FLEXFLUX_THEME_VERSION, 'all' );
 		
 		wp_enqueue_style( 'flexflux-style', get_stylesheet_uri(), array(), FLEXFLUX_THEME_VERSION, 'all' ); // get_stylesheet_directory_uri() . '/style.css'
 	}

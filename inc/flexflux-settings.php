@@ -29,7 +29,7 @@ function flexflux_admin_init() {
 	add_settings_field('excerpt_or_content_in_list', __( 'Show excerpt or content in the list', 'flexflux' ), 'flexflux_field_excerpt_or_content_callback', 'flexflux_general_page', 'flexflux_settings_general_section');
 	add_settings_field('code_head', __( 'Head code', 'flexflux' ), 'flexflux_field_code_head_callback', 'flexflux_general_page', 'flexflux_settings_general_section');
 	add_settings_field('code_footer', __( 'Footer code', 'flexflux' ), 'flexflux_field_code_footer_callback', 'flexflux_general_page', 'flexflux_settings_general_section');
-	
+	add_settings_field('use_cdn', __( 'Use CDN', 'flexflux' ), 'flexflux_field_use_cdn_callback', 'flexflux_general_page', 'flexflux_settings_general_section');
 }
 add_action('admin_init', 'flexflux_admin_init');
 
@@ -44,14 +44,14 @@ add_action('admin_init', 'flexflux_settings_init');
 
 function flexflux_settings_validate($input) {
 	$default_settings = flexflux_get_settings();
-	
+	$output['use_cdn'] = $input['use_cdn'];
 	$output['max_width'] = trim($input['max_width']);
 	$output['layout'] = trim($input['layout']);
 	$output['logo_url'] = trim($input['logo_url']);
 	$output['excerpt_or_content_in_list'] = trim($input['excerpt_or_content_in_list']);
 	$output['code_head'] = trim($input['code_head']);
 	$output['code_footer'] = trim($input['code_footer']);
-
+	
 	return $output;
 }
 
@@ -167,6 +167,14 @@ function flexflux_field_code_footer_callback() {
 	$default_settings = flexflux_default_settings();
 	echo '<textarea name="flexflux_settings[code_footer]" class="large-text" style="width: 25em; height: 100px;">'.$settings['code_footer'].'</textarea>';
 	echo '<p class="description">'.__( 'Code will be added to body section just before closing [body] tag', 'flexflux' ).'</p>';
+}
+
+
+function flexflux_field_use_cdn_callback() {
+	$settings = flexflux_get_settings();
+	echo '<label><input type="checkbox" name="flexflux_settings[use_cdn]" '.checked(1, $settings['use_cdn'], false).' value="1" />';
+	echo ' Use CDN (Bootstrap and Ionicons assets)</label>';
+	echo '<p class="description"></p>';
 }
 
 
