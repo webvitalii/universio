@@ -76,8 +76,8 @@ if ( ! function_exists( 'flexflux_setup' ) ) :
 			'header-text'            => false, // disable editing styles for text in header
 
 			// set height and width, with a maximum value for the width
-			'width'                  => 800,
-			'height'                 => 500,
+			'width'                  => 1200,
+			'height'                 => 250,
 			'max-width'              => 2000,
 
 			// support flexible height and width

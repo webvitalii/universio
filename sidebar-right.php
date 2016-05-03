@@ -1,33 +1,6 @@
 
 				<div class="col-sm-3">
-					<div class="widget-area widget-area-right" role="complementary">
-
-						<header class="site-sidebar-header clearfix" role="banner">
-
-							<?php
-
-							$title_desc = esc_attr( get_bloginfo( 'name', 'display' ) );
-							if ( get_bloginfo( 'description' ) ) { // add desc to title attr
-								$title_desc .= ' | '.esc_attr( get_bloginfo( 'description', 'display' ) );
-							}
-
-							if ( flexflux_is_homepage() ) {
-								$link_before = '';
-								$link_after = '';
-							} else {
-								$link_before = '<a href="' . esc_url( home_url( '/' ) ) . '" title="' . $title_desc . '">';
-								$link_after = '</a>';
-							}
-							$header_image = get_header_image();
-							if ( ! empty( $header_image ) ) : ?>
-								<?php echo $link_before; ?>
-									<img class="border-radius" src="<?php echo esc_url( $header_image ); ?>"
-									   width="<?php echo get_custom_header()->width; ?>"
-									   alt="<?php echo $title_desc ?>">
-								<?php echo $link_after; ?>
-							<?php endif; ?>
-
-						</header><!-- .site-sidebar-header -->
+					<div class="widget-area widget-area-right">
 
 
 						<?php if ( ! dynamic_sidebar( 'sidebar_right' ) ) : // sidebar widgetized area ?>

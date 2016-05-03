@@ -1,5 +1,5 @@
 /*
-Theme Name: FlexFlux
+Theme Name: Flexflux
 Theme URI: http://web-profile.net/wordpress/themes/flexflux/
 Description: FlexFlux is Responsive and Flexible theme. Features: 6 templates (1 column, 2 columns, 3 columns, 2 sidebars), Search Engines Friendly, WooCommerce Compatible, Cross-Browser Compatible and much more. More info at http://web-profile.net/flexflux/
 Version: 0.1
@@ -34,9 +34,6 @@ body {
 /* ========== helper classes ========== */
 .box-shadow {
 	box-shadow: #ccc 0 0 8px;
-}
-.border-radius {
-	border-radius: 2px;
 }
 .bg-lite-blue {
 	background-color: #E0EDFE;
