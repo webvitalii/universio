@@ -294,9 +294,10 @@ img#wpstats {
 .site-main .wrap-thumbnail img {
 	box-sizing: content-box;
 }
-.site-main a img, #content .gallery a img {
-	padding: 4px;
-	border: 1px solid #ccc;
+.site-main a img,
+#content .gallery a img {
+	border: 0;
+	border-bottom: 2px solid transparent;
 	transition: all 0.3s ease;
 }
 .site-main a:hover img, #content .gallery a:hover img {
@@ -602,8 +603,6 @@ body.admin-bar .navbar-fixed-top { /* move menu below admin-bar */
 
 /* ========== site-header ========== */
 .site-header {
-	border-bottom: 1px solid #ddd;
-	padding-bottom: 20px;
 	margin-bottom: 20px;
 }
 
