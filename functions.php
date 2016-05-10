@@ -173,8 +173,9 @@ endif;
 
 if ( ! function_exists( 'flexflux_list_pages' ) ) :
 	function flexflux_list_pages() {
+		// nav-menu nav clearfix
 		?>
-		<nav class="fx-menu fx-menu-dark-transparent nav-menu nav clearfix" role="navigation"><ul class="nav"><?php wp_list_pages( 'title_li=' ); ?></ul></nav>
+		<nav class="fx-menu fx-menu-dark-transparent" role="navigation"><ul class=""><?php wp_list_pages( 'title_li=' ); ?></ul></nav>
 		<?php
 	}
 endif;
