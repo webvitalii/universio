@@ -48,34 +48,6 @@ body {
 }
 
 
-/* ========== table ========== */
-
-table caption + thead tr:first-child th,
-table caption + thead tr:first-child td,
-table colgroup + thead tr:first-child th,
-table colgroup + thead tr:first-child td,
-table thead:first-child tr:first-child th,
-table thead:first-child tr:first-child td {
-	border-top: 0;
-}
-table tbody + tbody {
-	border-top: 2px solid #ddd;
-}
-table table {
-	background-color: #ffffff;
-}
-table td.label { /* WordPress sample data fix */
-	background-color: transparent;
-	display: table-cell;
-	padding: 8px;
-	text-shadow: none;
-	font-size: inherit;
-	line-height: inherit;
-	font-weight: inherit;
-	color: inherit;
-}
-
-
 /* ========== WordPress styles ========== */
 
 /* images */
@@ -297,13 +269,6 @@ a:active img[class*="wp-image-"],
 }
 
 /* ========== make sure embeds and iframes fit their containers ========== */
-embed, iframe, object {
-	max-width: 100%;
-}
-
-iframe {
-	border: 0;
-}
 
 div[id*='attachment_']{
 	max-width: 100%;
@@ -338,37 +303,6 @@ video {
 	width: 630px;
 	max-width: 100%;
 	margin-bottom: 18px;
-}
-
-
-/* ========== default form styles ========== */
-textarea, input[type="text"], input[type="email"],
-input[type="url"], input[type="password"], input[type="file"],
-input[type="email"], input[type="number"], input[type="search"],
-input[type="tel"], input[type="url"], select {
-	height: 34px;
-	padding: 6px 12px;
-	font-size: 14px;
-	line-height: 1.42857143;
-	color: #555;
-	background-color: #fff;
-	background-image: none;
-	border: 1px solid #ccc;
-	border-radius: 4px;
-}
-textarea {
-	height: auto;
-}
-input[type="submit"],
-input[type="button"],
-input[type="reset"],
-button {
-	display: inline-block;
-	margin-bottom: 0;
-	text-align: center;
-	white-space: nowrap;
-	vertical-align: middle;
-	cursor: pointer;
 }
 
 
@@ -558,18 +492,6 @@ body.admin-bar .navbar-fixed-top { /* move menu below admin-bar */
 /* ========== site-header ========== */
 .site-header {
 	margin-bottom: 20px;
-}
-
-.site-sidebar-header {
-	margin: 0 0 30px 0;
-}
-.site-sidebar-header a img {
-	padding: 0;
-	border: 0;
-	transition: all .3s ease;
-}
-.site-sidebar-header a:hover img {
-	opacity: 0.8;
 }
 
 .site-logo {
