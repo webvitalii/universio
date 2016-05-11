@@ -2,10 +2,6 @@ jQuery(function($){ // wait while jQuery loads (document-ready)
 
 	$('table#wp-calendar').addClass('table table-condensed'); // add styles for calendar
 
-	$('.search-submit-button').click(function() { // submit the form if the search icon was clicked
-		$(this).closest('form').submit();
-	});
-
 	// fix when long fixed menu overlaps site content
 	var window_width = $(window).width();
 	if( window_width > 979 ) {
