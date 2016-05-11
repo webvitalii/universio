@@ -48,34 +48,6 @@ body {
 }
 
 
-blockquote:before, blockquote:after,
-q:before, q:after {
-	content: "";
-}
-blockquote, q {
-	quotes: "" "";
-}
-
-
-/* ========== text ========== */
-body, html {
-	font-size: 16px; /* 16px = 100% */
-	line-height: 1.6em;
-}
-p, li {
-	font-size: 16px;
-	line-height: 1.6em;
-}
-p, ol, ul {
-	margin-bottom: 25px;
-}
-ol ol, ul ul, ol ul, ul ol {
-	margin-bottom: 0;
-}
-blockquote, q {
-	background-color: #fafafa;
-}
-
 /* ========== table ========== */
 
 table caption + thead tr:first-child th,
@@ -101,24 +73,6 @@ table td.label { /* WordPress sample data fix */
 	line-height: inherit;
 	font-weight: inherit;
 	color: inherit;
-}
-
-/* ========== links ========== */
-a {
-	text-decoration: underline;
-}
-a:visited {
-	/*color: #333;*/
-	/*color: #551A8B;*/
-}
-a:hover {
-	/*color: #06e;*/
-}
-a:active {
-	color: #900;
-}
-a img {
-	border: 0;
 }
 
 

@@ -11,7 +11,7 @@
 
 </head>
 
-<body <?php body_class(); ?>>
+<body <?php body_class('fx-wrap'); ?>>
 
 <div id="page" class="hfeed site site-main">
 

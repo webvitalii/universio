@@ -1,14 +1,10 @@
 jQuery(function($){ // wait while jQuery loads (document-ready)
 
-	$('input#submit').addClass('btn btn-primary'); // add styles for submit button in comments
-
 	$('table#wp-calendar').addClass('table table-condensed'); // add styles for calendar
 
 	$('.search-submit-button').click(function() { // submit the form if the search icon was clicked
 		$(this).closest('form').submit();
 	});
-
-	$('input[type=submit], input[type=image], input[type=button], input[type=reset], button').addClass('btn').addClass('btn-default');
 
 	// fix when long fixed menu overlaps site content
 	var window_width = $(window).width();
