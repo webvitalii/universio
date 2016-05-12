@@ -25,9 +25,9 @@
 				<?php
 				// it is completely optional, but if you like the theme I would appreciate it if you keep the credit link at the bottom ?>
 				<?php _e( 'Powered by', 'flexflux' ); ?>
-				<a href="http://wordpress.org/" title="<?php _e( 'WordPress CMS', 'flexflux' ); ?>" target="_blank"><i class="ionicon ion-social-wordpress-outline icon-20"></i> <span><?php _e( 'WordPress', 'flexflux' ); ?></span></a>
-				<?php _e( '&', 'flexflux' ); ?>
-				<a href="http://web-profile.net/wordpress/themes/flexflux/" title="<?php _e( 'Flexflux theme', 'flexflux' ); ?>" target="_blank"><i class="ionicon ion-ios-star-outline icon-20"></i> <span><?php _e( 'Flexflux', 'flexflux' ); ?></span></a>
+				<!--<a href="http://wordpress.org/" title="<?php _e( 'WordPress CMS', 'flexflux' ); ?>" target="_blank"><i class="ionicon ion-social-wordpress-outline icon-20"></i> <span><?php _e( 'WordPress', 'flexflux' ); ?></span></a>
+				<?php _e( '&', 'flexflux' ); ?>-->
+				<a href="http://web-profile.net/wordpress/themes/flexflux/" title="<?php _e( 'Flexflux theme', 'flexflux' ); ?>" target="_blank"><!--<i class="ionicon ion-ios-star-outline icon-20"></i>--> <span><?php _e( 'Flexflux', 'flexflux' ); ?></span></a>
 
 				<a href="<?php echo esc_url( get_bloginfo( 'rss2_url' ) ); ?>" class="rss-feed-link" title="<?php echo esc_attr( __( 'Posts RSS feed', 'flexflux' ) ); ?>"><i class="ionicon ion-social-rss icon-20"></i></a>
 				<a href="<?php echo esc_url( get_bloginfo( 'comments_rss2_url' ) ); ?>" class="rss-feed-link" title="<?php echo esc_attr( __( 'Comments RSS feed', 'flexflux' ) ); ?>"><i class="ionicon ion-social-rss icon-20"></i></a>
