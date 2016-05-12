@@ -222,12 +222,12 @@ img#wpstats {
 }
 .site-main a img,
 #content .gallery a img {
-	border: 0;
-	border-bottom: 2px solid transparent;
+	box-shadow: none;
 	transition: all 0.3s ease;
 }
-.site-main a:hover img, #content .gallery a:hover img {
-	border-color: #08c;
+.site-main a:hover img,
+#content .gallery a:hover img {
+	box-shadow: 0 0 0 2px #08c;
 }
 
 /* ========== image borders ========== */
