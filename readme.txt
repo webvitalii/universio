@@ -1,11 +1,11 @@
 === Flexflux ===
 Theme Name: Flexflux
-Theme URI: http://web-profile.net/wordpress/themes/flexflux/
-Contributors: webvitaly
+Theme URI: http://codecanyon.net/user/webvitalii/portfolio?ref=webvitalii
+Contributors: webvitalii
 Donate link: http://web-profile.net/donate/
 
 
-Responsive and flexible theme. Features: 6 layouts (1, 2 or 3 columns), widget-ready sidebars, Search Engines Friendly, WooCommerce support and much more. More info at http://web-profile.net/flexflux/
+Responsive and flexible theme. Features: 6 layouts (1, 2 or 3 columns), widget-ready sidebars, Search Engines Friendly, WooCommerce support and much more. More info at http://codecanyon.net/user/webvitalii/portfolio?ref=webvitalii
 
 == Description ==
 
@@ -37,13 +37,13 @@ Responsive and flexible theme. Features: 6 layouts (1, 2 or 3 columns), widget-r
 
 
 = 0.1 - 2016-04-30 =
-* initial release - Forked Activetab
+* initial release
 
 
 == Other Notes ==
 
-flexflux theme, copyright 2016 web-profile.net
-flexflux theme is distributed under the terms of the GNU GPL
+Flexflux theme, copyright 2016 webio.ca
+Flexflux theme is distributed under the terms of the GNU GPL
 
 
 = Bundled Resources: =
