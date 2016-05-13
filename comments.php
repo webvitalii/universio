@@ -30,7 +30,7 @@
 
 
 	<?php if ( get_previous_comments_link() || get_next_comments_link() ) : ?>
-	<nav class="site-comments-navigation site-comments-navigation-top" role="navigation">
+	<nav class="site-comments-navigation site-comments-navigation-top">
 		<ul class="pager">
 			<?php
 			if ( get_previous_comments_link() ) :
@@ -51,7 +51,7 @@
 
 
 	<?php if ( get_previous_comments_link() || get_next_comments_link() ) : ?>
-	<nav class="site-comments-navigation site-comments-navigation-bottom" role="navigation">
+	<nav class="site-comments-navigation site-comments-navigation-bottom">
 		<ul class="pager">
 			<?php
 			if ( get_previous_comments_link() ) :

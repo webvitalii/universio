@@ -1,6 +1,6 @@
 
-				<div class="col-sm-3">
-					<div class="widget-area widget-area-left" role="complementary">
+				<div class="fx-box-1 fx-padding-all fx-bg-gray-lightest">
+					<div class="widget-area widget-area-left">
 
 						<?php if ( ! dynamic_sidebar( 'sidebar_left' ) ) : // sidebar widgetized area ?>
 							<?php
@@ -22,4 +22,4 @@
 						<?php endif; // end of the sidebar widgetized area ?>
 
 					</div><!-- .widget-area .widget-area-left -->
-				</div><!-- .col-sm-3 -->
+				</div><!-- .fx-box -->

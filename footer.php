@@ -1,15 +1,15 @@
 
 
+	</div><!-- .fx-grid -->
+
 </div><!-- #main .site-main -->
 
-</div><!-- .row -->
 
+<footer class="site-footer clearfix">
 
-<footer id="colophon" class="site-footer clearfix" role="contentinfo">
+	<div class="fx-grid">
 
-	<div class="row">
-
-		<div class="col-sm-8">
+		<div class="fx-box-2 fx-padding-all">
 			<div class="site-footer-left">
 
 				<?php if ( ! dynamic_sidebar( 'footer' ) ) : // the footer widgetized area ?>
@@ -17,31 +17,29 @@
 				<?php endif; // end of the footer widgetized area ?>
 
 			</div><!-- .site-footer-left -->
-		</div><!-- .col-sm-8 -->
+		</div><!-- .fx-box -->
 
-		<div class="col-sm-4">
+		<div class="fx-box-1 fx-padding-all">
 			<div class="site-footer-right text-right">
 
 				<?php
 				// it is completely optional, but if you like the theme I would appreciate it if you keep the credit link at the bottom ?>
 				<?php _e( 'Powered by', 'flexflux' ); ?>
-				<!--<a href="http://wordpress.org/" title="<?php _e( 'WordPress CMS', 'flexflux' ); ?>" target="_blank"><i class="ionicon ion-social-wordpress-outline icon-20"></i> <span><?php _e( 'WordPress', 'flexflux' ); ?></span></a>
+				<!--<a href="http://wordpress.org/" title="<?php _e( 'WordPress CMS', 'flexflux' ); ?>" target="_blank"><i class="ionicon ion-social-wordpress-outline icon-20"></i><?php _e( 'WordPress', 'flexflux' ); ?></a>
 				<?php _e( '&', 'flexflux' ); ?>-->
-				<a href="http://web-profile.net/wordpress/themes/flexflux/" title="<?php _e( 'Flexflux theme', 'flexflux' ); ?>" target="_blank"><!--<i class="ionicon ion-ios-star-outline icon-20"></i>--> <span><?php _e( 'Flexflux', 'flexflux' ); ?></span></a>
+				<a href="http://web-profile.net/wordpress/themes/flexflux/" title="<?php _e( 'Responsive WordPress theme', 'flexflux' ); ?>" target="_blank"><!--<i class="ionicon ion-ios-star-outline icon-20"></i>--><?php _e( 'Flexflux', 'flexflux' ); ?></a>
 
 				<a href="<?php echo esc_url( get_bloginfo( 'rss2_url' ) ); ?>" class="rss-feed-link" title="<?php echo esc_attr( __( 'Posts RSS feed', 'flexflux' ) ); ?>"><i class="ionicon ion-social-rss icon-20"></i></a>
 				<a href="<?php echo esc_url( get_bloginfo( 'comments_rss2_url' ) ); ?>" class="rss-feed-link" title="<?php echo esc_attr( __( 'Comments RSS feed', 'flexflux' ) ); ?>"><i class="ionicon ion-social-rss icon-20"></i></a>
 
 			</div><!-- .site-footer-right -->
-		</div><!-- .col-sm-4 -->
+		</div><!-- .fx-box -->
 
-	</div><!-- .row -->
+	</div><!-- .fx-grid -->
 
 
-</footer><!-- #colophon .site-footer -->
+</footer><!-- .site-footer -->
 
-</div><!-- .col-sm-12 -->
-</div><!-- .row -->
 </div><!-- .site-wrapper -->
 </div><!-- .container -->
 

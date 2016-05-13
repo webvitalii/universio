@@ -1,18 +1,15 @@
 
-				<div class="col-sm-3">
+				<div class="fx-box-1 fx-padding-all fx-bg-gray-lightest">
 					<div class="widget-area widget-area-right">
-
 
 						<?php if ( ! dynamic_sidebar( 'sidebar_right' ) ) : // sidebar widgetized area ?>
 							<?php
 								// show something if there is no widgets in main sidebar
 							?>
 
-
 							<aside class="widget widget_search">
 								<?php get_search_form(); ?>
 							</aside>
-
 
 							<?php
 							$args = array( // most popular posts ordered by comment count
@@ -36,7 +33,6 @@
 							</aside>
 							<?php endif; ?>
 
-
 							<?php
 							$args = array( // most recent posts ordered by publish date
 								'numberposts' => 5,
@@ -58,7 +54,6 @@
 								</ul>
 							</aside>
 							<?php endif; ?>
-
 
 							<aside class="widget widget_categories">
 								<h4 class="widget-title"><?php _e( 'Categories', 'flexflux' ); ?></h4>
@@ -83,7 +78,6 @@
 								</ul>
 							</aside>
 
-
 							<aside class="widget widget_meta">
 								<h4 class="widget-title"><?php _e( 'Meta', 'flexflux' ); ?></h4>
 								<ul>
@@ -92,8 +86,7 @@
 								</ul>
 							</aside>
 
-
 						<?php endif; // end of the sidebar widgetized area ?>
 
 					</div><!-- .widget-area .widget-area-right -->
-				</div><!-- .col-sm-3 -->
+				</div><!-- .fx-box -->

@@ -325,7 +325,6 @@ template {
 	font-size: 90%;
 	color: #bbb;
 	background-color: #f7f7f7;
-	border-radius: 4px;
 }
 
 .fx-wrap kbd {
@@ -333,7 +332,6 @@ template {
 	font-size: 90%;
 	color: #fff;
 	background-color: #333;
-	border-radius: 3px;
 }
 
 .fx-wrap kbd kbd {
@@ -356,7 +354,6 @@ template {
 	font-size: inherit;
 	color: inherit;
 	background-color: transparent;
-	border-radius: 0;
 }
 
 .fx-pre-scrollable {
@@ -966,7 +963,7 @@ template {
 /* ---------- nav - menu - light ---------- */
 
 .fx-menu-light {
-	background: #eee;
+	background-color: transparent;
 	color: #333;
 }
 
@@ -998,45 +995,10 @@ template {
 	border-top: 4px solid #333;
 }
 
-/* ---------- nav - menu - light transparent ---------- */
-
-.fx-menu-light-transparent {
-	background-color: transparent;
-	color: #333;
-}
-
-.fx-menu-light-transparent a {
-	color: #333;
-}
-
-.fx-menu-light-transparent li a:hover, 
-.fx-menu-light-transparent li a:focus,
-.fx-menu-light-transparent li.current_page_item > a, 
-.fx-menu-light-transparent li.current-page-item > a,
-.fx-menu-light-transparent li.current_menu_item > a, 
-.fx-menu-light-transparent li.current-menu-item > a,
-.fx-menu-light-transparent li.current_page_ancestor > a, 
-.fx-menu-light-transparent li.current-page-ancestor > a,
-.fx-menu-light-transparent li.current_menu_ancestor > a, 
-.fx-menu-light-transparent li.current-menu-ancestor > a {
-	color: #111;
-	background-color: #ddd;
-}
-
-.fx-menu-light-transparent ul ul {
-	background: #eee;
-	color: #333;
-}
-
-.fx-menu-light-transparent ul li.page_item_has_children > a:after,
-.fx-menu-light-transparent ul li.menu-item-has-children > a:after {
-	border-top: 4px solid #333;
-}
-
 /* ---------- nav - menu - dark ---------- */
 
 .fx-menu-dark {
-	background: #333;
+	background-color: transparent;
 	color: #eee;
 }
 
@@ -1065,41 +1027,6 @@ template {
 
 .fx-menu-dark ul li.page_item_has_children > a:after,
 .fx-menu-dark ul li.menu-item-has-children > a:after {
-	border-top: 4px solid #eee;
-}
-
-/* ---------- nav - menu - dark transparent ---------- */
-
-.fx-menu-dark-transparent {
-	background-color: transparent;
-	color: #eee;
-}
-
-.fx-menu-dark-transparent a {
-	color: #eee;
-}
-
-.fx-menu-dark-transparent li a:hover, 
-.fx-menu-dark-transparent li a:focus,
-.fx-menu-dark-transparent li.current_page_item > a, 
-.fx-menu-dark-transparent li.current-page-item > a,
-.fx-menu-dark-transparent li.current_menu_item > a, 
-.fx-menu-dark-transparent li.current-menu-item > a,
-.fx-menu-dark-transparent li.current_page_ancestor > a, 
-.fx-menu-dark-transparent li.current-page-ancestor > a,
-.fx-menu-dark-transparent li.current_menu_ancestor > a, 
-.fx-menu-dark-transparent li.current-menu-ancestor > a {
-	color: #fff;
-	background-color: #111;
-}
-
-.fx-menu-dark-transparent ul ul {
-	background: #333;
-	color: #eee;
-}
-
-.fx-menu-dark-transparent ul li.page_item_has_children > a:after,
-.fx-menu-dark-transparent ul li.menu-item-has-children > a:after {
 	border-top: 4px solid #eee;
 }
 
@@ -1179,7 +1106,6 @@ template {
 	background-color: #fff;
 	background-image: none;
 	border: 1px solid #555;
-	border-radius: 3px;
 }
 
 .fx-form-control:focus {
@@ -1203,9 +1129,6 @@ template {
 
 .fx-wrap button {
 	overflow: visible;
-}
-
-.fx-wrap button {
 	text-transform: none;
 }
 
@@ -1227,7 +1150,6 @@ template {
 	background-color: #eee;
 	background-image: linear-gradient(#fcfcfc, #eee);
 	border: 1px solid #d5d5d5;
-	border-radius: 3px;
 	text-decoration: none;
 	transition: all 0.3s ease;
 }
@@ -1434,6 +1356,62 @@ template {
 
 .fx-clearfix:after {
 	clear: both;
+}
+
+/* ---------- helpers - bg color ---------- */
+
+.fx-bg-black {
+	background-color: rgb(0,0,0);
+}
+
+.fx-bg-gray-darkest {
+	background-color: rgb(32,32,32);
+}
+
+.fx-bg-gray-darker {
+	background-color: rgb(64,64,64);
+}
+
+.fx-bg-gray-dark {
+	background-color: rgb(96,96,96);
+}
+
+.fx-bg-gray {
+	background-color: rgb(128,128,128);
+}
+
+.fx-bg-gray-light {
+	background-color: rgb(160,160,160);
+}
+
+.fx-bg-gray-lighter {
+	background-color: rgb(192,192,192);
+}
+
+.fx-bg-gray-lightest {
+	background-color: rgb(224,224,224);
+}
+
+.fx-bg-white {
+	background-color: rgb(255,255,255);
+}
+
+/* ---------- helpers - position ---------- */
+
+.fx-fixed-top {
+	position: fixed;
+	top: 0;
+	right: 0;
+	left: 0;
+	z-index: 500;
+}
+
+.fx-fixed-bottom {
+	position: fixed;
+	bottom: 0;
+	right: 0;
+	left: 0;
+	z-index: 500;
 }
 
 /* ---------- helpers - text ---------- */

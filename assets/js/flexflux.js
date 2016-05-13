@@ -5,7 +5,7 @@ jQuery(function($){ // wait while jQuery loads (document-ready)
 	// fix when long fixed menu overlaps site content
 	var window_width = $(window).width();
 	if( window_width > 979 ) {
-		var menu_height = $('.navbar-fixed-top').height();
+		var menu_height = $('.fx-fixed-top').height();
 		if( menu_height > 50 ) { // if there are more than one row of menu items
 			$('.site-content-pusher').css( 'height', menu_height+'px' );
 		}
@@ -19,7 +19,7 @@ jQuery(function($){ // wait while jQuery loads (document-ready)
 jQuery(window).bind( 'resize', function() { // fix when long fixed menu overlaps site content on resize
 	var window_width = jQuery(window).width();
 	if( window_width > 979 ) {
-		var menu_height = jQuery('.navbar-fixed-top').height();
+		var menu_height = jQuery('.fx-fixed-top').height();
 		if( menu_height > 50 ) { // if there are more than one row of menu items
 			jQuery('.site-content-pusher').css( 'height', menu_height+'px' );
 		} else {

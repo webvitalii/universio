@@ -15,24 +15,26 @@
 
 <div id="page" class="hfeed site site-main">
 
-<div class="navbar navbar-inverse navbar-fixed-top">
+<div class="fx-fixed-top fx-bg-gray-darkest">
 
-	<div class="container site-container">
-		<nav class="site-navigation main-navigation" role="navigation">
-		<?php //wp_list_pages('title_li='); // list of pages ?>
+	<div class="fx-container fx-container-lg">
+
+		<nav class="fx-menu fx-menu-dark"
+		<?php //wp_list_pages('title_li='); // list of all pages ?>
 		<?php
 		wp_nav_menu( array(
 			'theme_location' => 'primary-nav',
-			'container' => 'nav',
-			'container_class' => 'nav-menu fx-menu fx-menu-dark-transparent', // clearfix 
-			'menu_class' => '', // nav
+			//'container' => 'nav',
+			//'container_class' => 'nav-menu0 fx-menu0 fx-menu-dark-transparent0', // clearfix 
+			//'menu_class' => '', // nav
 			'fallback_cb' => 'flexflux_list_pages'
 		) );
 		?>
 		</nav><!-- .site-navigation .main-navigation -->
-	</div><!-- .container .site-container -->
 
-</div><!-- .container .site-container -->
+	</div><!-- .fx-container fx-container-lg -->
+
+</div><!-- .fx-fixed-top -->
 
 <div class="site-content-pusher"><!-- push content because of fixed menu --></div>
 
@@ -46,8 +48,7 @@
 	</header><!-- .site-header -->
 	<?php endif; ?>
 	
-<div class="row">
-<div class="col-sm-12">
-<div class="row">
+	
+<div id="main" class="site-main">
 
-	<div id="main" class="site-main">
+	<div class="fx-grid">

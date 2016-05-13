@@ -2,13 +2,13 @@
 // global $wp_query;
 // $template_name = get_post_meta( $wp_query->post->ID, '_wp_page_template', true );
 
-$col_class = 'col-sm-6';
+//$col_class = 'col-sm-6';
 
 $settings = flexflux_get_settings();
 
 $logo_url = $settings['logo_url'];
 
-if( $settings['layout'] == 'sidebar-content' || $settings['layout'] == 'content-sidebar' ) {
+/*if( $settings['layout'] == 'sidebar-content' || $settings['layout'] == 'content-sidebar' ) {
 	$col_class = 'col-sm-9';
 }
 
@@ -18,9 +18,11 @@ if( $settings['layout'] == 'content' ) {
 
 if( is_page_template ( 'template-full-width-no-sidebar.php' ) ){ // show wide column if sidebar is removed
 	$col_class = 'col-sm-12 full-width-wrap';
-}
+}*/
+
+$col_class = 'fx-box-3 fx-padding-all';
 ?>
-			<div class="<?php echo $col_class; ?> clearfix">
+			<div class="<?php echo $col_class; ?>">
 
 
 
@@ -39,7 +41,7 @@ if ( flexflux_is_homepage() ) {
 }
 ?>
 
-				<header class="site-header clearfix" role="banner">
+				<header class="site-header fx-clearfix">
 
 					<?php if ( ! empty( $logo_url ) ) : ?>
 					<div class="site-logo">
@@ -55,8 +57,6 @@ if ( flexflux_is_homepage() ) {
 
 				</header><!-- .site-header -->
 
-			
 
 				<div id="primary" class="content-area">
-					<div id="content" class="site-content" role="main">
-
+					<div id="content" class="site-content">

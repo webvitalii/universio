@@ -173,9 +173,10 @@ endif;
 
 if ( ! function_exists( 'flexflux_list_pages' ) ) :
 	function flexflux_list_pages() {
-		// nav-menu nav clearfix
 		?>
-		<nav class="fx-menu fx-menu-dark-transparent" role="navigation"><ul class=""><?php wp_list_pages( 'title_li=' ); ?></ul></nav>
+		<nav class="fx-menu fx-menu-dark">
+			<ul><?php wp_list_pages( 'title_li=' ); ?></ul>
+		</nav>
 		<?php
 	}
 endif;
@@ -355,7 +356,7 @@ if ( ! function_exists( 'flexflux_nav' ) ) :
 			endif;
 		endif;
 		if ( ! empty( $nav ) ) { // do not show empty markup
-			$nav = "\n".'<nav class="site-posts-navigation site-comments-navigation-'.$class.'" role="navigation"><ul class="pager">'.$nav.'</ul></nav><!-- .site-posts-navigation -->'."\n";
+			$nav = "\n".'<nav class="site-posts-navigation site-comments-navigation-'.$class.'"><ul class="pager">'.$nav.'</ul></nav><!-- .site-posts-navigation -->'."\n";
 		}
 		return $nav;
 	}

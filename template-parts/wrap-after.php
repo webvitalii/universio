@@ -1,4 +1,4 @@
 
 					</div><!-- #content -->
 				</div><!-- #primary -->
-			</div><!-- .col-sm .clearfix -->
+			</div><!-- .fx-box -->
