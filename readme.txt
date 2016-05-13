@@ -42,7 +42,7 @@ Responsive and flexible theme. Features: 6 layouts (1, 2 or 3 columns), widget-r
 
 == Other Notes ==
 
-Flexflux theme, copyright 2016 webio.ca
+Flexflux theme, copyright 2016 http://webio.ca/
 Flexflux theme is distributed under the terms of the GNU GPL
 
 
