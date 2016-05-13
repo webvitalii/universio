@@ -22,7 +22,6 @@ body {
 	margin-top: 20px;
 	margin-left: auto;
 	margin-right: auto;
-	padding: 20px 20px;
 	background: #fff;
 }
 
@@ -555,9 +554,6 @@ table#wp-calendar td, table#wp-calendar th {
 	.site-navigation, .widget-area, .site-footer, .respond-form, .comment-reply-link { /* hide main menu, sidebar and footer for print */
 		display: none;
 	}
-	.site-wrapper {
-		margin-top: 10px;
-	}
 	.page-header {
 		margin: 0 0 10px 0;
 	}
@@ -596,7 +592,6 @@ table#wp-calendar td, table#wp-calendar th {
 	font-size: 14px;
 	line-height: 16px;
 	color: #555;
-	padding: 20px 0 0 0;
 	border-top: 1px solid #ddd;
 }
 .site-footer p, .site-footer li {
@@ -610,20 +605,4 @@ table#wp-calendar td, table#wp-calendar th {
 }
 .site-footer .site-footer-right a:hover {
 	color: #555;
-}
-
-.icon-20 {
-	display: inline-block;
-	width: 20px;
-	height: 20px;
-	font-size: 20px;
-	line-height: 1;
-	text-decoration: inherit;
-	font-weight: 400;
-	font-style: normal;
-	vertical-align: baseline;
-	text-align: center;
-	-webkit-transition: color .1s ease-in 0;
-	transition: color .1s ease-in 0;
-	-webkit-font-smoothing: antialiased;
 }

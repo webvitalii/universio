@@ -1596,7 +1596,6 @@ template {
 	font-style: normal;
 	vertical-align: baseline;
 	text-align: center;
-	-webkit-transition: color .1s ease-in 0;
 	transition: color .1s ease-in 0;
 	-webkit-font-smoothing: antialiased;
 }

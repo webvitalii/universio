@@ -232,8 +232,8 @@ if ( ! function_exists( 'flexflux_comments' ) ) :
 								echo '<div class="comment-avatar">'.$comment_avatar_url_before.get_avatar( $comment, $avatar_size ).$comment_avatar_url_after.'</div>';
 
 								echo '<div class="comment-meta">';
-								echo '<span class="comment-meta-item comment-meta-item-author fn"><i class="ionicon ion-ios-person icon-20" title="'.esc_attr( __( 'Author', 'flexflux' ) ).'"></i> '.get_comment_author_link().$post_author_label.'</span> ';
-								echo '<span class="comment-meta-item comment-meta-item-date"><i class="ionicon ion-ios-calendar-outline icon-20" title="'.esc_attr( __( 'Published', 'flexflux' ) ).'"></i> <a href="'.esc_url( get_comment_link( $comment->comment_ID ) ).'"><time datetime="'.get_comment_time( 'c' ).'" title="'.get_comment_time().'">'.get_comment_date().'</time></a></span>';
+								echo '<span class="comment-meta-item comment-meta-item-author fn"><i class="ionicon ion-ios-person fx-icon fx-icon-20" title="'.esc_attr( __( 'Author', 'flexflux' ) ).'"></i> '.get_comment_author_link().$post_author_label.'</span> ';
+								echo '<span class="comment-meta-item comment-meta-item-date"><i class="ionicon ion-ios-calendar-outline fx-icon fx-icon-20" title="'.esc_attr( __( 'Published', 'flexflux' ) ).'"></i> <a href="'.esc_url( get_comment_link( $comment->comment_ID ) ).'"><time datetime="'.get_comment_time( 'c' ).'" title="'.get_comment_time().'">'.get_comment_date().'</time></a></span>';
 
 								edit_comment_link( '<span class="btn btn-default btn-sm"><i class="ionicon ion-edit"></i> '.__( 'Edit', 'flexflux' ).'</span>', '<span class="edit-link comment-edit-link">', '</span>' );
 
@@ -250,7 +250,7 @@ if ( ! function_exists( 'flexflux_comments' ) ) :
 						<div class="comment-content"><?php comment_text(); ?></div>
 
 						<div class="reply">
-							<?php comment_reply_link( array_merge( $args, array( 'reply_text' => '<span class="btn btn-default"><i class="ionicon ion-ios-chatbubble icon-20"></i> '.__( 'Reply', 'flexflux' ).'</span>', 'depth' => $depth, 'max_depth' => $args['max_depth'] ) ) ); ?>
+							<?php comment_reply_link( array_merge( $args, array( 'reply_text' => '<span class="btn btn-default"><i class="ionicon ion-ios-chatbubble fx-icon fx-icon-20"></i> '.__( 'Reply', 'flexflux' ).'</span>', 'depth' => $depth, 'max_depth' => $args['max_depth'] ) ) ); ?>
 						</div><!-- .reply -->
 					</article><!-- #comment-<?php comment_ID(); ?> -->
 
@@ -263,7 +263,7 @@ endif;
 
 if ( ! function_exists( 'flexflux_post_date' ) ) :
 	function flexflux_post_date() {
-		$post_date = '<span class="entry-meta-item entry-meta-date"><i class="ionicon ion-ios-calendar-outline icon-20" title="'.esc_attr( __( 'Published', 'flexflux' ) ).'"></i> '.'<a href="'.esc_url( get_permalink() ).'" title="'.get_the_time().'"><time class="entry-date" datetime="'.get_the_date( 'c' ).'" title="'.get_the_time().'">'.get_the_date().'</time></a></span>'."\n";
+		$post_date = '<span class="entry-meta-item entry-meta-date"><i class="ionicon ion-ios-calendar-outline fx-icon fx-icon-20" title="'.esc_attr( __( 'Published', 'flexflux' ) ).'"></i> '.'<a href="'.esc_url( get_permalink() ).'" title="'.get_the_time().'"><time class="entry-date" datetime="'.get_the_date( 'c' ).'" title="'.get_the_time().'">'.get_the_date().'</time></a></span>'."\n";
 		return $post_date;
 	}
 endif;
@@ -274,7 +274,7 @@ if ( ! function_exists( 'flexflux_post_sticky' ) ) :
 		$post_sticky = '';
 
 		if( is_sticky() ) { // add 'sticky' label to sticky post
-			$sticky = ' <i class="ionicon ion-pin icon-20"></i><span class="label label-info">'.__( 'Sticky', 'flexflux' ).'</span>';
+			$sticky = ' <i class="ionicon ion-pin fx-icon fx-icon-20"></i><span class="label label-info">'.__( 'Sticky', 'flexflux' ).'</span>';
 			$post_sticky = '<span class="entry-meta-item entry-meta-sticky">'.$sticky.'</span>'."\n";
 		}
 
@@ -288,7 +288,7 @@ if ( ! function_exists( 'flexflux_post_author' ) ) :
 		global $authordata;
 		if ( !is_object( $authordata ) )
 			return false;
-		$post_author = '<span class="entry-meta-item entry-meta-author"><i class="ionicon ion-ios-person icon-20" title="'.esc_attr( __( 'Author', 'flexflux' ) ).'"></i> <a href="'.esc_url( get_author_posts_url( $authordata->ID, $authordata->user_nicename ) ).'" title="'.esc_attr(  __( 'Author', 'flexflux' ) ).'">'.get_the_author().'</a></span>'."\n";
+		$post_author = '<span class="entry-meta-item entry-meta-author"><i class="ionicon ion-ios-person fx-icon fx-icon-20" title="'.esc_attr( __( 'Author', 'flexflux' ) ).'"></i> <a href="'.esc_url( get_author_posts_url( $authordata->ID, $authordata->user_nicename ) ).'" title="'.esc_attr(  __( 'Author', 'flexflux' ) ).'">'.get_the_author().'</a></span>'."\n";
 		return $post_author;
 	}
 endif;
@@ -298,7 +298,7 @@ if ( ! function_exists( 'flexflux_comments_count' ) ) :
 	function flexflux_comments_count() {
 		$post_comments_count = '';
 		if ( get_comments_number() != '0' ) {
-			$post_comments_count = '<span class="entry-meta-item entry-meta-comments-count"><i class="ionicon ion-ios-chatbubble icon-20" title="'.esc_attr( __( 'Comments', 'flexflux' ) ).'"></i> <a href="'.esc_url( get_permalink() ).'#comments" title="'.__( 'Comments', 'flexflux' ).'">'.get_comments_number().'</a></span>'."\n";
+			$post_comments_count = '<span class="entry-meta-item entry-meta-comments-count"><i class="ionicon ion-ios-chatbubble fx-icon fx-icon-20" title="'.esc_attr( __( 'Comments', 'flexflux' ) ).'"></i> <a href="'.esc_url( get_permalink() ).'#comments" title="'.__( 'Comments', 'flexflux' ).'">'.get_comments_number().'</a></span>'."\n";
 		}
 		return $post_comments_count;
 	}
@@ -309,7 +309,7 @@ if ( ! function_exists( 'flexflux_post_categories' ) ) :
 	function flexflux_post_categories() { // list of categories
 		$post_categories = get_the_category_list( __( ', ', 'flexflux' ) );
 		if ( !empty( $post_categories ) ) {
-			return '<span class="entry-meta-item entry-meta-categories"><i class="ionicon ion-ios-folder icon-20" title="'.esc_attr( __( 'Categories', 'flexflux' ) ).'"></i> '.$post_categories.'</span>'."\n";
+			return '<span class="entry-meta-item entry-meta-categories"><i class="ionicon ion-ios-folder fx-icon fx-icon-20" title="'.esc_attr( __( 'Categories', 'flexflux' ) ).'"></i> '.$post_categories.'</span>'."\n";
 		} else {
 			return ''; // no categories
 		}
@@ -321,7 +321,7 @@ if ( ! function_exists( 'flexflux_post_tags' ) ) :
 	function flexflux_post_tags() { // list of tags
 		$post_tags = get_the_tag_list( '', __( ', ', 'flexflux' ), '' );
 		if( !empty( $post_tags ) ){
-			return '<span class="entry-meta-item entry-meta-tags"><i class="ionicon ion-ios-pricetag icon-20" title="'.esc_attr( __( 'Tags', 'flexflux' ) ).'"></i> '.$post_tags.'</span>'."\n";
+			return '<span class="entry-meta-item entry-meta-tags"><i class="ionicon ion-ios-pricetag fx-icon fx-icon-20" title="'.esc_attr( __( 'Tags', 'flexflux' ) ).'"></i> '.$post_tags.'</span>'."\n";
 		}else{
 			return ''; // no tags
 		}
@@ -397,11 +397,11 @@ if ( ! function_exists( 'flexflux_rss_button' ) ) :
 	function flexflux_rss_button() { // output content to the footer section
 		$output = '';
 		if ( is_category() ) {
-			$output = '<a href="'.get_category_feed_link( get_query_var( 'cat' ) ).'" class="rss-feed-link" title="'.esc_attr( __( 'Category RSS feed', 'flexflux' ) ).'"><i class="ionicon ion-social-rss icon-20"></i></a>';
+			$output = '<a href="'.get_category_feed_link( get_query_var( 'cat' ) ).'" class="rss-feed-link" title="'.esc_attr( __( 'Category RSS feed', 'flexflux' ) ).'"><i class="ionicon ion-social-rss fx-icon fx-icon-20"></i></a>';
 		} elseif ( is_tag() ) {
-			$output = '<a href="'.get_tag_feed_link( get_query_var( 'tag_id' ) ).'" class="rss-feed-link" title="'.esc_attr( __( 'Tag RSS feed', 'flexflux' ) ).'"><i class="ionicon ion-social-rss icon-20"></i></a>';
+			$output = '<a href="'.get_tag_feed_link( get_query_var( 'tag_id' ) ).'" class="rss-feed-link" title="'.esc_attr( __( 'Tag RSS feed', 'flexflux' ) ).'"><i class="ionicon ion-social-rss fx-icon fx-icon-20"></i></a>';
 		} elseif ( is_author() ) {
-			$output = '<a href="'.get_author_feed_link( get_the_author_meta( 'ID' ) ).'" class="rss-feed-link" title="'.esc_attr( __( 'Author RSS feed', 'flexflux' ) ).'"><i class="ionicon ion-social-rss icon-20"></i></a>';
+			$output = '<a href="'.get_author_feed_link( get_the_author_meta( 'ID' ) ).'" class="rss-feed-link" title="'.esc_attr( __( 'Author RSS feed', 'flexflux' ) ).'"><i class="ionicon ion-social-rss fx-icon fx-icon-20"></i></a>';
 		}
 		return $output;
 	}
