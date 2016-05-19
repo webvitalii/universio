@@ -1,5 +1,5 @@
 
-				<div class="fx-box-1 fx-padding-all fx-bg-gray-lightest">
+				<div class="fx-box-3 fx-padding-all fx-bg-gray-lightest">
 					<div class="widget-area widget-area-right">
 
 						<?php if ( ! dynamic_sidebar( 'sidebar_right' ) ) : // sidebar widgetized area ?>
