@@ -33,7 +33,7 @@
 </footer><!-- .site-footer -->
 
 </div><!-- .site-wrapper -->
-</div><!-- .container -->
+</div><!-- .fx-container -->
 
 </div><!-- #page .hfeed -->
 

@@ -1,125 +1,48 @@
 <?php
-	if (!empty($_SERVER['SCRIPT_FILENAME']) && 'comments.php' == basename($_SERVER['SCRIPT_FILENAME'])) {
-		die ('Do not load this page directly!');
-	}
-
-	if ( post_password_required() ) {
+if ( post_password_required() ) {
+	return;
+}
 ?>
-		<div class="alert alert-message info">
-			<?php _e( 'This post is password protected. Enter the password to view comments.', 'flexflux' ); ?>
-		</div>
-<?php
-		return;
-	}
-?>
-
 
 <div id="comments" class="comments-area">
 
-<?php if ( have_comments() ) : ?>
+	<?php if ( have_comments() ) : ?>
 
-	<h3 class="comments-title">
-		<?php
-		printf( _n( '1 comment on &ldquo;%2$s&rdquo;', '%1$s comments on &ldquo;%2$s&rdquo;', get_comments_number(), 'flexflux' ),
-			number_format_i18n( get_comments_number() ), '<span>' . get_the_title() . '</span>' );
-		global $post;
-		echo '<a href="'.get_post_comments_feed_link( $post->ID ).'" class="rss-feed-link" title="'.esc_attr( __( 'Post comments RSS feed', 'flexflux' ) ).'"><i class="ionicon ion-social-rss fx-icon fx-icon-20"></i></a>';
-		?>
-	</h3>
-
-
-
-	<?php if ( get_previous_comments_link() || get_next_comments_link() ) : ?>
-	<nav class="site-comments-navigation site-comments-navigation-top">
-		<ul class="pager">
+		<h3 class="comments-title">
 			<?php
-			if ( get_previous_comments_link() ) :
-				echo '<li class="previous">'.get_previous_comments_link( __( '&larr; Previous comments', 'flexflux' ) ).'</li>';
-			endif;
-			if ( get_next_comments_link() ) :
-				echo '<li class="next">'.get_next_comments_link( __( 'Next comments &rarr;', 'flexflux' ) ).'</li>';
-			endif;
-			?>
-		</ul>
-	</nav><!-- .site-comments-navigation -->
-	<?php endif; ?>
-
-
-	<ol class="commentlist">
-		<?php wp_list_comments( array( 'callback' => 'flexflux_comments' ) );?>
-	</ol>
-
-
-	<?php if ( get_previous_comments_link() || get_next_comments_link() ) : ?>
-	<nav class="site-comments-navigation site-comments-navigation-bottom">
-		<ul class="pager">
-			<?php
-			if ( get_previous_comments_link() ) :
-				echo '<li class="previous">'.get_previous_comments_link( __( '&larr; Previous comments', 'flexflux' ) ).'</li>';
-			endif;
-			if ( get_next_comments_link() ) :
-				echo '<li class="next">'.get_next_comments_link( __( 'Next comments &rarr;', 'flexflux' ) ).'</li>';
-			endif;
-			?>
-		</ul>
-	</nav><!-- .site-comments-navigation -->
-	<?php endif; ?>
-
-<?php endif; // end of if( have_comments() ) ?>
-
-
-<?php if ( comments_open() ) : ?>
-
-	<section id="respond" class="respond-form">
-
-		<div id="cancel-comment-reply">
-			<p><?php cancel_comment_reply_link( '<span class="btn btn-default"><i class="ionicon ion-ios-close fx-icon fx-icon-20"></i> '.__( 'Cancel reply', 'flexflux' ).'</span>' ); ?></p>
-		</div>
-
-		<?php if ( get_option('comment_registration') && !is_user_logged_in() ) : ?>
-	    <div class="help">
-	        <p><?php printf( __( 'You must be <a href="%s">logged in</a> to post a comment.', 'flexflux' ), wp_login_url( get_permalink() ) ) ?></p>
-	    </div>
-		<?php else : ?>
-
-		<div class="well">
-		<?php
+			printf( _n( '1 comment on &ldquo;%2$s&rdquo;', '%1$s comments on &ldquo;%2$s&rdquo;', get_comments_number(), 'flexflux' ),
+				number_format_i18n( get_comments_number() ), '<span>' . get_the_title() . '</span>' );
 			global $post;
-			$post_id = $post->ID;
-			$commenter = wp_get_current_commenter();
-			$user = wp_get_current_user();
-			//$user_identity = $user->exists() ? $user->display_name : '';
-			$req = get_option( 'require_name_email' );
-			$aria_req = ( $req ? " required='required'" : '' );
-			$comment_form_args = array(
-				'fields' => array(
-					'author' => '<div class="form-group comment-form-author"> <label class="control-label" for="author"><strong>'.__( 'Name', 'flexflux' ).'</strong></label> <div class="input-group"><span class="input-group-addon"><i class="ionicon ion-ios-person fx-icon fx-icon-20"></i></span><input id="author" class="form-control" name="author" type="text" value="' . esc_attr( $commenter['comment_author'] ) . '" ' . $aria_req . ( $req ? ' required ' : '' ) . '></div></div>',
-					'email'  => '<div class="form-group comment-form-email"> <label class="control-label" for="email"><strong>'.__( 'Email', 'flexflux' ).'</strong> <span class="text-muted smaller-text">'.__( 'Email will not be published', 'flexflux' ).'</span></label> <div class="input-group"><span class="input-group-addon"><i class="ionicon ion-ios-email fx-icon fx-icon-20"></i></span><input id="email" class="form-control" name="email" type="email" value="' . esc_attr( $commenter['comment_author_email'] ) . '" ' . $aria_req . ( $req ? ' required ' : '' ) . '></div> </div>',
-					'url'    => '<div class="form-group comment-form-url"> <label class="control-label" for="url"><strong>'.__( 'Website', 'flexflux' ).'</strong> <span class="text-muted smaller-text">'.__( 'Example: http://google.com', 'flexflux' ).'</span></label> <div class="input-group"><span class="input-group-addon"><i class="ionicon ion-link fx-icon fx-icon-20"></i></span><input id="url" class="form-control" name="url" type="url" value="' . esc_attr( $commenter['comment_author_url'] ) . '"></div> </div>',
-				),
-				'comment_field'        => '<div class="form-group comment-form-comment"> <label class="control-label" for="comment"><strong>'.__( 'Comment', 'flexflux' ).'</strong></label> <div class="input-group"><span class="input-group-addon"><i class="ionicon ion-ios-chatbubble fx-icon fx-icon-20"></i></span><textarea id="comment" class="form-control" name="comment" cols="45" rows="8" required="required"></textarea></div></div>',
-				'must_log_in'          => '<div class="form-group must-log-in"><span class="help-block text-muted smaller-text">' . sprintf( __( 'You must be <a href="%s">logged in</a> to post a comment.', 'flexflux' ), wp_login_url( apply_filters( 'the_permalink', get_permalink( $post_id ) ) ) ) . '</span></div>',
-				'logged_in_as'         => '<div class="form-group logged-in-as"><span class="help-block text-muted smaller-text">' . sprintf( __( 'You logged in as <a href="%1$s">%2$s</a>. <a href="%3$s">Log out</a>', 'flexflux' ), admin_url( 'profile.php' ), $user_identity, wp_logout_url( apply_filters( 'the_permalink', get_permalink( $post_id ) ) ) ) . '</span></div>',
-				'comment_notes_before' => '',
-				'comment_notes_after'  => '<div class="form-group form-allowed-tags"><span class="help-block text-muted smaller-text">' . __( 'Allowed HTML tags:', 'flexflux' ). ' <span>' . '&lt;a href="http://google.com"&gt;<a href="http://google.com">google</a>&lt;/a&gt; &lt;strong&gt;<strong>bold</strong>&lt;/strong&gt; &lt;em&gt;<em>emphasized</em>&lt;/em&gt; &lt;code&gt;<code>code</code>&lt;/code&gt; &lt;blockquote&gt;<blockquote style="display: inline; padding: 4px 8px;">quote</blockquote>&lt;/blockquote&gt; ' . '</span></span></div>', // allowed_tags()
-				'id_form'              => 'commentform',
-				'id_submit'            => 'submit',
-				'title_reply'          => __( 'Submit comment', 'flexflux' ),
-				'title_reply_to'       => __( 'Submit reply to %s', 'flexflux' ),
-				'cancel_reply_link'    => __( 'Cancel reply', 'flexflux' ),
-				'label_submit'         => __( 'Submit comment', 'flexflux' ),
-			);
-			comment_form( $comment_form_args );
-		?>
-		</div>
+			echo '<a href="'.get_post_comments_feed_link( $post->ID ).'" class="rss-feed-link" title="'.esc_attr( __( 'Post comments RSS feed', 'flexflux' ) ).'"><i class="ionicon ion-social-rss fx-icon fx-icon-20"></i></a>';
+			?>
+		</h3>
 
-		<?php endif; // if registration required and not logged in ?>
-	</section><!-- #respond -->
+		<?php the_comments_navigation(); ?>
 
-<?php else: ?>
+		<ol class="comment-list">
+			<?php wp_list_comments( array(
+				'callback' => 'flexflux_comments',
+				'style' => 'ol',
+				'short_ping'  => true,
+				'avatar_size' => 50
+			) );?>
+		</ol><!-- .comment-list -->
 
-	<?php // comments are closed ?>
+		<?php the_comments_navigation(); ?>
 
-<?php endif; // end of if( comments_open() ) ?>
+	<?php endif; ?>
+
+
+	<?php
+		// If comments are closed and there are comments, let's leave a little note, shall we?
+		if ( ! comments_open() && get_comments_number() && post_type_supports( get_post_type(), 'comments' ) ) :
+	?>
+		<p class="no-comments"><?php _e( 'Comments are closed.', 'flexflux' ); ?></p>
+	<?php endif; ?>
+
+
+	<?php
+		comment_form();
+	?>
 
 </div><!-- #comments .comments-area -->

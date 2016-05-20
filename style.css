@@ -339,7 +339,7 @@ video {
 	word-wrap: break-word;
 }
 
-.commentlist .comment-author {
+.comment-list .comment-author {
 	position: relative;
 }
 
@@ -348,7 +348,7 @@ video {
 	margin: 0;
 }
 
-.commentlist li.comment {
+.comment-list li.comment {
 	position: relative;
 	background: #fff;
 	border-top: 1px solid #ddd;
@@ -357,7 +357,7 @@ video {
 	margin-bottom: 20px;
 }
 
-.commentlist li.bypostauthor {
+.comment-list li.bypostauthor {
 	background-color: #f2f7fc;
 }
 
@@ -365,24 +365,24 @@ video {
 	color: #808080;
 }
 
-.commentlist .comment-avatar {
+.comment-list .comment-avatar {
 	float: left;
 	margin: 0 10px 0 0;
 }
-.commentlist .comment-avatar img {
+.comment-list .comment-avatar img {
 	border: 0;
 	padding: 0;
 }
-.commentlist .comment-avatar img:hover {
+.comment-list .comment-avatar img:hover {
 	border: 0;
 	padding: 0;
 }
-.commentlist {
+.comment-list {
 	list-style-type: none;
 	margin-left: 0;
 	padding-left: 0;
 }
-.commentlist .children {
+.comment-list .children {
 	list-style-type: none;
 	margin: 0 0 0 20px;
 	padding-left: 0;
@@ -406,6 +406,15 @@ video {
 .wp_link_pages a:hover {
 	background-color: #eee;
 }
+
+.nav-links {
+	display: flex;
+	justify-content: space-between;
+	font-weight: bold;
+}
+.nav-links .nav-previous {}
+.nav-links .nav-next {}
+
 
 
 /* ========== .entry-meta ========== */

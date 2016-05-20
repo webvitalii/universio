@@ -199,7 +199,7 @@ if ( ! function_exists( 'flexflux_comments' ) ) :
 							}
 						?>
 						<?php comment_author_link(); ?>
-						<?php edit_comment_link( '<span class="btn btn-default btn-sm"><i class="ionicon ion-edit"></i> '.__( 'Edit', 'flexflux' ).'</span>', '<span class="edit-link '.$comment->comment_type.'-edit-link">', '</span>' ); ?>
+						<?php edit_comment_link( '<span class="fx-btn"><i class="ionicon ion-edit"></i> '.__( 'Edit', 'flexflux' ).'</span>', '<span class="edit-link '.$comment->comment_type.'-edit-link">', '</span>' ); ?>
 					</p>
 					<?php
 				break;
@@ -235,7 +235,7 @@ if ( ! function_exists( 'flexflux_comments' ) ) :
 								echo '<span class="comment-meta-item comment-meta-item-author fn"><i class="ionicon ion-ios-person fx-icon fx-icon-20" title="'.esc_attr( __( 'Author', 'flexflux' ) ).'"></i> '.get_comment_author_link().$post_author_label.'</span> ';
 								echo '<span class="comment-meta-item comment-meta-item-date"><i class="ionicon ion-ios-calendar-outline fx-icon fx-icon-20" title="'.esc_attr( __( 'Published', 'flexflux' ) ).'"></i> <a href="'.esc_url( get_comment_link( $comment->comment_ID ) ).'"><time datetime="'.get_comment_time( 'c' ).'" title="'.get_comment_time().'">'.get_comment_date().'</time></a></span>';
 
-								edit_comment_link( '<span class="btn btn-default btn-sm"><i class="ionicon ion-edit"></i> '.__( 'Edit', 'flexflux' ).'</span>', '<span class="edit-link comment-edit-link">', '</span>' );
+								edit_comment_link( '<span class="fx-btn"><i class="ionicon ion-edit"></i> '.__( 'Edit', 'flexflux' ).'</span>', '<span class="edit-link comment-edit-link">', '</span>' );
 
 								echo '</div><!-- .comment-meta -->';
 								?>
@@ -250,7 +250,7 @@ if ( ! function_exists( 'flexflux_comments' ) ) :
 						<div class="comment-content"><?php comment_text(); ?></div>
 
 						<div class="reply">
-							<?php comment_reply_link( array_merge( $args, array( 'reply_text' => '<span class="btn btn-default"><i class="ionicon ion-ios-chatbubble fx-icon fx-icon-20"></i> '.__( 'Reply', 'flexflux' ).'</span>', 'depth' => $depth, 'max_depth' => $args['max_depth'] ) ) ); ?>
+							<?php comment_reply_link( array_merge( $args, array( 'reply_text' => '<span class="fx-btn"><i class="ionicon ion-ios-chatbubble fx-icon fx-icon-20"></i> '.__( 'Reply', 'flexflux' ).'</span>', 'depth' => $depth, 'max_depth' => $args['max_depth'] ) ) ); ?>
 						</div><!-- .reply -->
 					</article><!-- #comment-<?php comment_ID(); ?> -->
 

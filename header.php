@@ -39,7 +39,7 @@
 <div class="site-content-pusher"><!-- push content because of fixed menu --></div>
 
 
-<div class="container site-container">
+<div class="fx-container fx-container-lg site-container">
 <div class="site-wrapper">
 
 	<?php if ( get_header_image() ) : ?>
