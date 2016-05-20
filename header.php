@@ -42,6 +42,47 @@
 <div class="fx-container fx-container-lg site-container">
 <div class="site-wrapper">
 
+
+
+
+<?php
+
+$settings = flexflux_get_settings();
+
+$logo_url = $settings['logo_url'];
+
+$title_desc = esc_attr( get_bloginfo( 'name', 'display' ) );
+if ( get_bloginfo( 'description' ) ) { // add desc to title attr
+	$title_desc .= ' | '.esc_attr( get_bloginfo( 'description', 'display' ) );
+}
+ 
+if ( flexflux_is_homepage() ) {
+	$link_before = '';
+	$link_after = '';
+} else {
+	$link_before = '<a href="' . esc_url( home_url( '/' ) ) . '" title="' . $title_desc . '">';
+	$link_after = '</a>';
+}
+?>
+
+				<header class="site-header fx-clearfix">
+
+					<?php if ( ! empty( $logo_url ) ) : ?>
+					<div class="site-logo">
+						<?php echo $link_before; ?><img src="<?php echo $logo_url; ?>" alt="<?php echo $title_desc; ?>"><?php echo $link_after; ?>
+					</div><!-- .site-logo -->
+					<?php endif; ?>
+				
+					<h3 class="site-title"><?php echo $link_before; ?><?php bloginfo( 'name' ); ?><?php echo $link_after; ?></h3>
+
+					<?php if ( get_bloginfo( 'description' ) ) : ?>
+					<h4 class="site-description text-muted"><?php bloginfo( 'description' ); ?></h4>
+					<?php endif; ?>
+
+				</header><!-- .site-header -->
+
+
+
 	<?php if ( get_header_image() ) : ?>
 	<header class="site-header">
 		<a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>"><img src="<?php header_image(); ?>" class="header-image" width="<?php echo esc_attr( get_custom_header()->width ); ?>" alt="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" /></a>

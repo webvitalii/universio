@@ -497,9 +497,7 @@ body.admin-bar .fx-fixed-top { /* move menu below admin-bar */
 }
 
 /* ========== site-header ========== */
-.site-header {
-	margin-bottom: 20px;
-}
+.site-header {}
 
 .site-logo {
 	float: left;
@@ -550,7 +548,7 @@ table#wp-calendar td, table#wp-calendar th {
 }
 
 
-.more-link{
+.more-link {
 	white-space: nowrap;
 }
 
@@ -575,16 +573,6 @@ table#wp-calendar td, table#wp-calendar th {
 }
 
 
-.search-submit-button {
-	cursor: pointer;
-}
-
-
-/* ========== pager ========== */
-.pager li > a {
-	text-decoration: none;
-}
-
 /* ========== rss feed ========== */
 .rss-feed-link {
 	margin-left: 10px;
@@ -608,10 +596,10 @@ table#wp-calendar td, table#wp-calendar th {
 	line-height: 16px;
 	color: #555;
 }
-.site-footer .site-footer-right a {
+.site-footer a {
 	color: #000;
 	transition: all 0.3s ease;
 }
-.site-footer .site-footer-right a:hover {
+.site-footer a:hover {
 	color: #555;
 }
