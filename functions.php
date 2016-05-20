@@ -343,20 +343,19 @@ endif;
 
 
 if ( ! function_exists( 'flexflux_nav' ) ) :
-	function flexflux_nav( $class='top' ) { // show next/prev navigation links when needed
-		// todo: replace with get_the_posts_navigation();
+	function flexflux_nav() { // show next/prev posts navigation links when needed
 		global $wp_query;
 		$nav = '';
 		if ( $wp_query->max_num_pages > 1 && ( is_home() || is_archive() || is_search() ) ) : // navigation links for home, archive, and search pages
-			if ( get_next_posts_link() ) :
-				$nav .= '<li class="previous">'.get_next_posts_link( __( '&larr; Previous posts', 'flexflux' ) ).'</li>';
-			endif;
 			if ( get_previous_posts_link() ) :
-				$nav .= '<li class="next">'.get_previous_posts_link( __( 'Next posts &rarr;', 'flexflux' ) ).'</li>';
+				$nav .= '<li class="previous">'.get_previous_posts_link().'</li>';
+			endif;
+			if ( get_next_posts_link() ) :
+				$nav .= '<li class="next">'.get_next_posts_link().'</li>';
 			endif;
 		endif;
 		if ( ! empty( $nav ) ) { // do not show empty markup
-			$nav = "\n".'<nav class="site-posts-navigation site-comments-navigation-'.$class.'"><ul class="pager">'.$nav.'</ul></nav><!-- .site-posts-navigation -->'."\n";
+			$nav = "\n".'<nav class="site-posts-navigation"><ul class="pager">'.$nav.'</ul></nav><!-- .site-posts-navigation -->'."\n";
 		}
 		return $nav;
 	}

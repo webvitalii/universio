@@ -5,7 +5,7 @@
 <?php get_template_part( 'template-parts/wrap', 'before' ); ?>
 
 				<?php if (have_posts()) : ?>
-
+					
 					<?php echo flexflux_nav(); ?>
 
 					<?php while ( have_posts() ) : the_post(); // the loop ?>
@@ -16,7 +16,7 @@
 
 					<?php endwhile; // end of the loop ?>
 
-					<?php echo flexflux_nav( 'bottom' ); ?>
+					<?php echo flexflux_nav(); ?>
 
 				<?php else : ?>
 
