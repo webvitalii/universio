@@ -348,14 +348,14 @@ if ( ! function_exists( 'flexflux_nav' ) ) :
 		$nav = '';
 		if ( $wp_query->max_num_pages > 1 && ( is_home() || is_archive() || is_search() ) ) : // navigation links for home, archive, and search pages
 			if ( get_previous_posts_link() ) :
-				$nav .= '<li class="previous">'.get_previous_posts_link().'</li>';
+				$nav .= '<div class="nav-previous">'.get_previous_posts_link().'</div>';
 			endif;
 			if ( get_next_posts_link() ) :
-				$nav .= '<li class="next">'.get_next_posts_link().'</li>';
+				$nav .= '<div class="nav-next">'.get_next_posts_link().'</div>';
 			endif;
 		endif;
 		if ( ! empty( $nav ) ) { // do not show empty markup
-			$nav = "\n".'<nav class="site-posts-navigation"><ul class="pager">'.$nav.'</ul></nav><!-- .site-posts-navigation -->'."\n";
+			$nav = "\n".'<nav class="site-posts-navigation nav-links">'.$nav.'</nav><!-- .site-posts-navigation -->'."\n";
 		}
 		return $nav;
 	}
