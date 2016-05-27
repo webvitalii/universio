@@ -9,13 +9,13 @@
 
 	<div class="fx-grid">
 
-		<div class="fx-box-8 fx-padding-all">
+		<div class="fx-box-sm-8 fx-padding-all">
 			<?php if ( ! dynamic_sidebar( 'footer' ) ) : // the footer widgetized area ?>
 				<!-- no widgets in footer -->
 			<?php endif; // end of the footer widgetized area ?>
 		</div><!-- .fx-box -->
 
-		<div class="fx-box-4 fx-padding-all fx-text-right">
+		<div class="fx-box-sm-4 fx-padding-all fx-text-right">
 			<?php
 			// it is completely optional, but if you like the theme I would appreciate it if you keep the credit link at the bottom ?>
 			<?php _e( 'Powered by', 'flexflux' ); ?>
