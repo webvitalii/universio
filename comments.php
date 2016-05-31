@@ -21,7 +21,7 @@ if ( post_password_required() ) {
 
 		<ol class="comment-list">
 			<?php wp_list_comments( array(
-				'callback' => 'flexflux_comments',
+				//'callback' => 'flexflux_comments',
 				'style' => 'ol',
 				'short_ping'  => true,
 				'avatar_size' => 50

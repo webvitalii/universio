@@ -40,7 +40,7 @@ if ( ! function_exists( 'flexflux_enqueue_scripts' ) ) :
 		
 		wp_enqueue_style( 'flexflux-flexify-style', get_template_directory_uri() . '/assets/flexify/css/flexify.css', array(), FLEXFLUX_THEME_VERSION, 'all' );
 		
-		wp_enqueue_style( 'flexflux-bootstrap-style', $bootstrap_path, array(), FLEXFLUX_THEME_VERSION, 'all' );
+		//wp_enqueue_style( 'flexflux-bootstrap-style', $bootstrap_path, array(), FLEXFLUX_THEME_VERSION, 'all' );
 		
 		//wp_enqueue_style( 'flexflux-bootstrap-theme-style', $bootstrap_theme_path, array(), FLEXFLUX_THEME_VERSION, 'all' );
 		
