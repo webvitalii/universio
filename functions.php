@@ -350,15 +350,40 @@ if ( ! function_exists( 'flexflux_nav' ) ) :
 		$nav_next = '';
 		if ( $wp_query->max_num_pages > 1 && ( is_home() || is_archive() || is_search() ) ) : // navigation links for home, archive and search pages
 			if ( get_previous_posts_link() ) :
-				$nav_prev = '<div class="nav-prev">'.get_previous_posts_link().'</div>';
+				$nav_prev = '<div class="nav-previous">'.get_previous_posts_link().'</div>';
 			endif;
 			if ( get_next_posts_link() ) :
 				$nav_next = '<div class="nav-next">'.get_next_posts_link().'</div>';
 			endif;
 		endif;
 		if ( get_previous_posts_link() || get_next_posts_link() ) { // do not show empty markup
-			$nav = "\n".'<nav class="site-posts-navigation nav-links fx-grid"><div class="fx-col-sm-6">'.$nav_prev.'</div><div class="fx-col-sm-6">'.$nav_next.'</div></nav><!-- .site-posts-navigation -->'."\n";
+			$nav = "\n".'<nav class="site-nav-posts nav-links fx-grid"><div class="fx-col-sm-6">'.$nav_prev.'</div><div class="fx-col-sm-6">'.$nav_next.'</div></nav><!-- .site-nav-posts -->'."\n";
 		}
+		return $nav;
+	}
+endif;
+
+
+if ( ! function_exists( 'flexflux_nav_comments' ) ) :
+	function flexflux_nav_comments() { // show next/prev comments navigation links when needed
+		$nav = '';
+		$nav_prev = '';
+		$nav_next = '';
+		if ( get_comment_pages_count() > 1 ) {
+			$prev_link = get_previous_comments_link( __( 'Older comments' ) );
+			$next_link = get_next_comments_link( __( 'Newer comments' ) );
+
+			if ( $prev_link ) {
+				$nav_prev = '<div class="nav-previous">' . $prev_link . '</div>';
+			}
+
+			if ( $next_link ) {
+				$nav_next = '<div class="nav-next">' . $next_link . '</div>';
+			}
+
+			$nav = "\n".'<nav class="site-nav-comments nav-links fx-grid"><div class="fx-col-sm-6">'.$nav_prev.'</div><div class="fx-col-sm-6">'.$nav_next.'</div></nav><!-- .site-nav-comments -->'."\n";
+		}
+
 		return $nav;
 	}
 endif;

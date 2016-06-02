@@ -17,7 +17,7 @@ if ( post_password_required() ) {
 			?>
 		</h3>
 
-		<?php the_comments_navigation(); ?>
+		<?php echo flexflux_nav_comments(); ?>
 
 		<ol class="comment-list">
 			<?php wp_list_comments( array(
@@ -28,7 +28,7 @@ if ( post_password_required() ) {
 			) );?>
 		</ol><!-- .comment-list -->
 
-		<?php the_comments_navigation(); ?>
+		<?php echo flexflux_nav_comments(); ?>
 
 	<?php endif; ?>
 
