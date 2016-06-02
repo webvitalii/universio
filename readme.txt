@@ -36,7 +36,7 @@ Responsive and flexible theme. Features: 6 layouts (1, 2 or 3 columns), widget-r
 == Changelog ==
 
 
-= 0.1 - 2016-04-30 =
+= 0.1 - 2016-06-30 =
 * initial release
 
 
@@ -48,7 +48,7 @@ Flexflux theme is distributed under the terms of the GNU GPL
 
 = Bundled Resources: =
 
-* [Bootstrap](http://getbootstrap.com/) licensed under [MIT](http://opensource.org/licenses/MIT)
+* [Flexify](http://flexify.webio.ca/) licensed under [MIT](http://opensource.org/licenses/MIT)
 * [Ionicons](http://ionicons.com/) licensed under [MIT](http://opensource.org/licenses/MIT)
 * [Pixabay](http://pixabay.com/) public domain images
 

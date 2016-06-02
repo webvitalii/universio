@@ -173,7 +173,7 @@ function flexflux_field_code_footer_callback() {
 function flexflux_field_use_cdn_callback() {
 	$settings = flexflux_get_settings();
 	echo '<label><input type="checkbox" name="flexflux_settings[use_cdn]" '.checked(1, $settings['use_cdn'], false).' value="1" />';
-	echo ' Use CDN (Bootstrap and Ionicons assets)</label>';
+	echo ' Use CDN (Ionicons assets)</label>';
 	echo '<p class="description"></p>';
 }
 
