@@ -306,10 +306,10 @@ video {
 
 
 /* ========== comments form ========== */
-#comment-form-title{
+#comment-form-title {
 	padding-left: 20px;
 }
-#comments{
+#comments {
 	line-height: 24px;
 	margin-bottom: 18px;
 }
@@ -318,6 +318,10 @@ video {
 }
 #commentform .form-submit {
 	margin-bottom: 0;
+}
+#respond {
+	background: #f5f5f5;
+	padding: 15px;
 }
 #respond #reply-title {
 	margin-top: 0;
@@ -369,7 +373,7 @@ video {
 	background: #fff;
 	border-top: 1px solid #ddd;
 	border-left: 1px solid #ddd;
-	padding: 19px 0 0 19px;
+	padding: 15px;
 	margin-bottom: 20px;
 }
 
