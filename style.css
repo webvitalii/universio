@@ -424,14 +424,13 @@ video {
 }
 
 .nav-links {
-	display: flex;
-	justify-content: space-between;
 	font-weight: bold;
 	margin: 15px 0;
 }
-.nav-links .nav-previous {}
-.nav-links .nav-next {}
-
+.nav-links .nav-prev {}
+.nav-links .nav-next {
+	text-align: right;
+}
 
 /* ========== .entry-meta ========== */
 .page-header {
