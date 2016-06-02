@@ -206,9 +206,9 @@ if ( ! function_exists( 'flexflux_comments' ) ) :
 			default :
 				?>
 				<li <?php comment_class(); ?> id="li-comment-<?php comment_ID(); ?>">
-					<article id="comment-<?php comment_ID(); ?>" class="clearfix">
+					<article id="comment-<?php comment_ID(); ?>" class="fx-clearfix">
 						<header class="comment-header">
-							<div class="comment-author vcard clearfix">
+							<div class="comment-author vcard fx-clearfix">
 								<?php
 								$avatar_size = 50;
 								if ( $comment->comment_parent != '0' ){

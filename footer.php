@@ -5,7 +5,7 @@
 </div><!-- #main .site-main -->
 
 
-<footer class="site-footer clearfix">
+<footer class="site-footer fx-clearfix">
 
 	<div class="fx-grid">
 
