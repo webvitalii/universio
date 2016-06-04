@@ -320,7 +320,7 @@ endif;
 
 if ( ! function_exists( 'flexflux_post_meta' ) ) :
 	function flexflux_post_meta() { // post meta
-		$post_meta = '<div class="entry-meta-row">'."\n" . flexflux_post_sticky() . flexflux_post_date() . flexflux_post_author() . flexflux_comments_count() . flexflux_post_categories() . '</div>'."\n";
+		$post_meta = '<div class="entry-meta-row">'."\n" . flexflux_post_sticky() . flexflux_post_author() . flexflux_post_date() . flexflux_comments_count() . flexflux_post_categories() . '</div>'."\n";
 		$post_tags = flexflux_post_tags();
 		if( !empty( $post_tags ) && is_single() ){
 			$post_meta .= '<div class="entry-meta-row">'."\n" . $post_tags . '</div>'."\n";
