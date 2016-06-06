@@ -76,7 +76,7 @@ if ( flexflux_is_homepage() ) {
 					<h3 class="site-title"><?php echo $link_before; ?><?php bloginfo( 'name' ); ?><?php echo $link_after; ?></h3>
 
 					<?php if ( get_bloginfo( 'description' ) ) : ?>
-					<h4 class="site-description text-muted"><?php bloginfo( 'description' ); ?></h4>
+					<h5 class="site-description text-muted"><?php bloginfo( 'description' ); ?></h5>
 					<?php endif; ?>
 
 				</header><!-- .site-header -->
