@@ -10,12 +10,11 @@ if ( ! defined( 'ABSPATH' ) ) { // prevent full path disclosure
 
 
 function flexflux_menu() { // add menu item
-	add_theme_page(__( 'Flexflux Settings', 'flexflux' ), __( 'Flexflux Settings', 'flexflux' ), 'manage_options', 'flexflux', 'flexflux_settings');
-	//add_menu_page( __( 'Flexflux Settings', 'flexflux' ), __( 'Flexflux Settings', 'flexflux' ),
+	add_theme_page(__( 'Universio Settings', 'flexflux' ), __( 'Universio Settings', 'flexflux' ), 'manage_options', 'flexflux', 'flexflux_settings');
+	//add_menu_page( __( 'Universio Settings', 'flexflux' ), __( 'Universio Settings', 'flexflux' ),
 	//	'manage_options', 'flexflux', 'flexflux_settings', 'dashicons-layout', 45 );
 }
 add_action('admin_menu', 'flexflux_menu');
-
 
 
 function flexflux_admin_init() {
@@ -30,6 +29,12 @@ function flexflux_admin_init() {
 	add_settings_field('code_head', __( 'Head code', 'flexflux' ), 'flexflux_field_code_head_callback', 'flexflux_general_page', 'flexflux_settings_general_section');
 	add_settings_field('code_footer', __( 'Footer code', 'flexflux' ), 'flexflux_field_code_footer_callback', 'flexflux_general_page', 'flexflux_settings_general_section');
 	add_settings_field('use_cdn', __( 'Use CDN', 'flexflux' ), 'flexflux_field_use_cdn_callback', 'flexflux_general_page', 'flexflux_settings_general_section');
+	
+	add_settings_field('ga_code', __( 'Google analytics code', 'flexflux' ), 'flexflux_field_ga_code_callback', 'flexflux_general_page', 'flexflux_settings_general_section');
+	
+	add_settings_field('ga_code_hide_if_loggedin', __( 'Hide Google analytics code if use is logged in', 'flexflux' ), 'flexflux_field_ga_code_hide_if_loggedin_callback', 'flexflux_general_page', 'flexflux_settings_general_section');
+	
+	
 }
 add_action('admin_init', 'flexflux_admin_init');
 
@@ -51,6 +56,8 @@ function flexflux_settings_validate($input) {
 	$output['excerpt_or_content_in_list'] = trim($input['excerpt_or_content_in_list']);
 	$output['code_head'] = trim($input['code_head']);
 	$output['code_footer'] = trim($input['code_footer']);
+	
+	$output['ga_code'] = trim($input['ga_code']);
 	
 	return $output;
 }
@@ -178,13 +185,29 @@ function flexflux_field_use_cdn_callback() {
 }
 
 
+function flexflux_field_ga_code_callback() {
+	$settings = flexflux_get_settings();
+	$default_settings = flexflux_default_settings();
+	echo '<input type="text" name="flexflux_settings[ga_code]" class="regular-text" value="'.$settings['ga_code'].'" />';
+	echo '<p class="description">Example: UA-12345678-9</p>';
+}
+
+
+function flexflux_field_ga_code_hide_if_loggedin_callback() {
+	$settings = flexflux_get_settings();
+	echo '<label><input type="checkbox" name="flexflux_settings[ga_code_hide_if_loggedin]" '.checked(1, $settings['ga_code_hide_if_loggedin'], false).' value="1" />';
+	echo ' Hide Google analytics code if use is logged in</label>';
+	echo '<p class="description"></p>';
+}
+
+
 function flexflux_settings() {
 	
 	?>
 	<div class="wrap">
 		
 		<h2><span class="dashicons dashicons-admin-generic" style="position: relative; top: 4px;"></span> 
-			<?php echo __( 'Flexflux Settings', 'flexflux' ); ?></h2>
+			<?php echo __( 'Universio Settings', 'flexflux' ); ?></h2>
 		
 		<form method="post" action="options.php">
 			<?php settings_fields('flexflux_settings_group'); ?>

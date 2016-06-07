@@ -12,7 +12,9 @@ function flexflux_default_settings() {
 		'excerpt_or_content_in_list' => 'excerpt',
 		'code_head' => '',
 		'code_footer' => '',
-		'use_cdn' => 0
+		'use_cdn' => 0,
+		'ga_code' => '',
+		'ga_code_hide_if_loggedin' => 1
 	);
 	return $settings;
 }
