@@ -1,6 +1,6 @@
 <?php
 
-$settings = flexflux_get_settings();
+$settings = universio_get_settings();
 
 if( $settings['layout'] == 'content-sidebar-sidebar' ) {
 	get_sidebar( 'left' );

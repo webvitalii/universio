@@ -6,7 +6,7 @@
 
 				<?php if (have_posts()) : ?>
 					
-					<?php echo flexflux_nav(); ?>
+					<?php echo universio_nav(); ?>
 
 					<?php while ( have_posts() ) : the_post(); // the loop ?>
 
@@ -16,13 +16,13 @@
 
 					<?php endwhile; // end of the loop ?>
 
-					<?php echo flexflux_nav(); ?>
+					<?php echo universio_nav(); ?>
 
 				<?php else : ?>
 
 					<article class="post no-results not-found">
 						<header class="entry-header page-header">
-							<h1 class="entry-title"><?php _e( 'No posts to display', 'flexflux' ); ?></h1>
+							<h1 class="entry-title"><?php _e( 'No posts to display', 'universio' ); ?></h1>
 						</header><!-- .entry-header -->
 
 						<div class="entry-content">

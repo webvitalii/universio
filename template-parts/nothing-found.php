@@ -1,7 +1,7 @@
 
 		<article class="post no-results nothing-found">
 			<header class="entry-header page-header">
-				<h1 class="entry-title"><?php _e( 'Nothing found', 'flexflux' ); ?></h1>
+				<h1 class="entry-title"><?php _e( 'Nothing found', 'universio' ); ?></h1>
 			</header><!-- .entry-header -->
 
 			<div class="entry-content">

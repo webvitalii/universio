@@ -4,7 +4,7 @@
 
 $col_class = 'fx-box-sm-6';
 
-$settings = flexflux_get_settings();
+$settings = universio_get_settings();
 
 if( $settings['layout'] == 'sidebar-content' || $settings['layout'] == 'content-sidebar' ) {
 	$col_class = 'fx-box-sm-9';

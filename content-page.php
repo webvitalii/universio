@@ -9,7 +9,7 @@
 
 	<section class="entry-content">
 		<?php the_content(); ?>
-		<?php wp_link_pages( array( 'before' => '<div class="wp_link_pages fx-clearfix"><span class="wp_link_pages-item-empty">' . __( 'Pages:', 'flexflux' ).'</span>', 'after' => '</div>', 'link_before' => '<span class="wp_link_pages-item">', 'link_after' => '</span>', 'pagelink' => '%' ) ); ?>
+		<?php wp_link_pages( array( 'before' => '<div class="wp_link_pages fx-clearfix"><span class="wp_link_pages-item-empty">' . __( 'Pages:', 'universio' ).'</span>', 'after' => '</div>', 'link_before' => '<span class="wp_link_pages-item">', 'link_after' => '</span>', 'pagelink' => '%' ) ); ?>
 	</section><!-- .entry-content -->
 
 </article><!-- #post-<?php the_ID(); ?> -->

@@ -5,7 +5,7 @@
 		<h3 class="entry-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
 
 		<?php if ( 'post' == get_post_type() ) : // hide meta text for pages ?>
-			<?php echo flexflux_post_meta(); ?>
+			<?php echo universio_post_meta(); ?>
 		<?php endif; ?>
 	</header><!-- .entry-header -->
 
@@ -14,7 +14,7 @@
 	<section class="entry-content entry-summary">
 
 		<?php
-		$settings = flexflux_get_settings();
+		$settings = universio_get_settings();
 		$excerpt_or_content_in_list = $settings['excerpt_or_content_in_list'];
 		if( $excerpt_or_content_in_list == 'excerpt' ) {
 			the_excerpt( '' );

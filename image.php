@@ -12,12 +12,12 @@
 								<header class="entry-header page-header">
 									<h1 class="entry-title"><?php the_title(); ?></h1>
 
-									<?php echo flexflux_post_meta(); ?>
+									<?php echo universio_post_meta(); ?>
 
 									<div class="entry-meta">
 										<?php
 										$metadata = wp_get_attachment_metadata();
-										printf( __( '<a href="%1$s">%2$s &times; %3$s</a> in <a href="%4$s" title="Return to %5$s">%6$s</a>', 'flexflux' ),
+										printf( __( '<a href="%1$s">%2$s &times; %3$s</a> in <a href="%4$s" title="Return to %5$s">%6$s</a>', 'universio' ),
 											wp_get_attachment_url(),
 											$metadata['width'],
 											$metadata['height'],
@@ -79,7 +79,7 @@
 									</div><!-- .entry-attachment -->
 
 									<?php the_content(); ?>
-									<?php wp_link_pages( array( 'before' => '<div class="wp_link_pages fx-clearfix"><span class="wp_link_pages-item-empty">' . __( 'Pages:', 'flexflux' ).'</span>', 'after' => '</div>', 'link_before' => '<span class="wp_link_pages-item">', 'link_after' => '</span>', 'pagelink' => '%' ) ); ?>
+									<?php wp_link_pages( array( 'before' => '<div class="wp_link_pages fx-clearfix"><span class="wp_link_pages-item-empty">' . __( 'Pages:', 'universio' ).'</span>', 'after' => '</div>', 'link_before' => '<span class="wp_link_pages-item">', 'link_after' => '</span>', 'pagelink' => '%' ) ); ?>
 
 								</div><!-- .entry-content -->
 

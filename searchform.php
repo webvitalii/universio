@@ -3,6 +3,6 @@
 	<input type="search" value="<?php echo esc_attr( get_search_query() ); ?>" class="fx-form-control" name="s" />
 	<button type="submit" class="fx-btn">
 		<i class="ionicon ion-ios-search-strong fx-icon fx-icon-20"></i> 
-		<?php echo esc_attr( __( 'Search', 'flexflux' ) ); ?>
+		<?php echo esc_attr( __( 'Search', 'universio' ) ); ?>
 	</button>
 </form>

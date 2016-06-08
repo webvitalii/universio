@@ -18,13 +18,13 @@
 		<div class="fx-box-sm-4 fx-padding-all fx-text-right">
 			<?php
 			// it is completely optional, but if you like the theme I would appreciate it if you keep the credit link at the bottom ?>
-			<?php _e( 'Powered by', 'flexflux' ); ?>
-			<a href="http://wordpress.org/" title="<?php _e( 'WordPress CMS', 'flexflux' ); ?>" target="_blank"><i class="ionicon ion-social-wordpress-outline fx-icon fx-icon-20"></i><?php _e( 'WordPress', 'flexflux' ); ?></a>
-			<?php //_e( '&', 'flexflux' ); ?>
-			<!--<a href="http://codecanyon.net/user/webvitalii/portfolio?ref=webvitalii" title="<?php _e( 'Responsive WordPress theme', 'flexflux' ); ?>" target="_blank"><?php _e( 'Flexflux', 'flexflux' ); ?></a>-->
+			<?php _e( 'Powered by', 'universio' ); ?>
+			<a href="http://wordpress.org/" title="<?php _e( 'WordPress CMS', 'universio' ); ?>" target="_blank"><i class="ionicon ion-social-wordpress-outline fx-icon fx-icon-20"></i><?php _e( 'WordPress', 'universio' ); ?></a>
+			<?php //_e( '&', 'universio' ); ?>
+			<!--<a href="http://codecanyon.net/user/webvitalii/portfolio?ref=webvitalii" title="<?php _e( 'Responsive WordPress theme', 'universio' ); ?>" target="_blank"><?php _e( 'Universio', 'universio' ); ?></a>-->
 
-			<a href="<?php echo esc_url( get_bloginfo( 'rss2_url' ) ); ?>" class="rss-feed-link" title="<?php echo esc_attr( __( 'Posts RSS feed', 'flexflux' ) ); ?>"><i class="ionicon ion-social-rss fx-icon fx-icon-20"></i></a>
-			<a href="<?php echo esc_url( get_bloginfo( 'comments_rss2_url' ) ); ?>" class="rss-feed-link" title="<?php echo esc_attr( __( 'Comments RSS feed', 'flexflux' ) ); ?>"><i class="ionicon ion-social-rss fx-icon fx-icon-20"></i></a>
+			<a href="<?php echo esc_url( get_bloginfo( 'rss2_url' ) ); ?>" class="rss-feed-link" title="<?php echo esc_attr( __( 'Posts RSS feed', 'universio' ) ); ?>"><i class="ionicon ion-social-rss fx-icon fx-icon-20"></i></a>
+			<a href="<?php echo esc_url( get_bloginfo( 'comments_rss2_url' ) ); ?>" class="rss-feed-link" title="<?php echo esc_attr( __( 'Comments RSS feed', 'universio' ) ); ?>"><i class="ionicon ion-social-rss fx-icon fx-icon-20"></i></a>
 		</div><!-- .fx-box -->
 
 	</div><!-- .fx-grid -->

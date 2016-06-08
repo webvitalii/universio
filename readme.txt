@@ -1,5 +1,5 @@
-=== Flexflux ===
-Theme Name: Flexflux
+=== Universio ===
+Theme Name: Universio
 Theme URI: http://codecanyon.net/user/webvitalii/portfolio?ref=webvitalii
 Contributors: webvitalii
 Donate link: http://web-profile.net/donate/
@@ -23,7 +23,7 @@ Responsive and flexible theme. Features: 6 layouts (1, 2 or 3 columns), widget-r
 * includes a sample WordPress Child theme for rapid development
 
 
-= Flexflux theme settings: =
+= Universio theme settings: =
 
 * max width
 * layout
@@ -42,8 +42,8 @@ Responsive and flexible theme. Features: 6 layouts (1, 2 or 3 columns), widget-r
 
 == Other Notes ==
 
-Flexflux theme, copyright 2016 http://webio.ca/
-Flexflux theme is distributed under the terms of the GNU GPL
+Universio theme, copyright 2016 http://webio.ca/
+Universio theme is distributed under the terms of the GNU GPL
 
 
 = Bundled Resources: =

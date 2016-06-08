@@ -9,7 +9,7 @@
 
 		<header class="entry-header page-header">
 			<h1 class="entry-title">
-				<?php _e( 'Search results for:', 'flexflux' ); ?>
+				<?php _e( 'Search results for:', 'universio' ); ?>
 				<?php echo get_search_query(); ?>
 			</h1>
 
@@ -17,7 +17,7 @@
 
 		</header><!-- .entry-header .page-header -->
 
-		<?php echo flexflux_nav(); ?>
+		<?php echo universio_nav(); ?>
 
 			<?php while ( have_posts() ) : the_post(); // the loop ?>
 
@@ -25,7 +25,7 @@
 
 			<?php endwhile; ?>
 
-		<?php echo flexflux_nav(); ?>
+		<?php echo universio_nav(); ?>
 
 		<?php else : ?>
 

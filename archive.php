@@ -9,7 +9,7 @@
 					<header class="entry-header page-header">
 						<h1 class="entry-title"><?php
 							echo get_the_archive_title();
-							echo flexflux_rss_button();
+							echo universio_rss_button();
 						?></h1>
 
 						<?php
@@ -23,7 +23,7 @@
 					</header><!-- .entry-header .page-header -->
 
 
-					<?php echo flexflux_nav(); ?>
+					<?php echo universio_nav(); ?>
 
 					<?php while ( have_posts() ) : the_post(); // the loop ?>
 
@@ -31,7 +31,7 @@
 
 					<?php endwhile; // end of the loop ?>
 
-					<?php echo flexflux_nav(); ?>
+					<?php echo universio_nav(); ?>
 
 				<?php else : ?>
 

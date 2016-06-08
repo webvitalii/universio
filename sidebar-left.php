@@ -8,14 +8,14 @@
 							?>
 
 							<aside class="widget widget_pages">
-								<h4 class="widget-title"><?php _e( 'Pages', 'flexflux' ); ?></h4>
+								<h4 class="widget-title"><?php _e( 'Pages', 'universio' ); ?></h4>
 								<ul>
 								<?php wp_list_pages( array( 'title_li' => '' ) ); ?>
 								</ul>
 							</aside>
 							
 							<aside class="widget widget_tags">
-								<h4 class="widget-title"><?php _e( 'Tags', 'flexflux' ); ?></h4>
+								<h4 class="widget-title"><?php _e( 'Tags', 'universio' ); ?></h4>
 								<?php wp_tag_cloud(); ?>
 							</aside>
 

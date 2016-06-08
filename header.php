@@ -27,7 +27,7 @@
 			//'container' => 'nav',
 			//'container_class' => 'nav-menu0 fx-menu0 fx-menu-dark-transparent0', // clearfix 
 			//'menu_class' => '', // nav
-			'fallback_cb' => 'flexflux_list_pages'
+			'fallback_cb' => 'universio_list_pages'
 		) );
 		?>
 		</nav><!-- .site-navigation .main-navigation -->
@@ -47,7 +47,7 @@
 
 <?php
 
-$settings = flexflux_get_settings();
+$settings = universio_get_settings();
 
 $logo_url = $settings['logo_url'];
 
@@ -56,7 +56,7 @@ if ( get_bloginfo( 'description' ) ) { // add desc to title attr
 	$title_desc .= ' | '.esc_attr( get_bloginfo( 'description', 'display' ) );
 }
  
-if ( flexflux_is_homepage() ) {
+if ( universio_is_homepage() ) {
 	$link_before = '';
 	$link_after = '';
 } else {

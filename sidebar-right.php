@@ -23,7 +23,7 @@
 							if( ! empty( $popular_posts ) ) : // show only if we have posts
 							?>
 							<aside class="widget widget_popular_entries">
-								<h4 class="widget-title"><?php _e( 'Popular posts', 'flexflux' ); ?></h4>
+								<h4 class="widget-title"><?php _e( 'Popular posts', 'universio' ); ?></h4>
 								<ul>
 									<?php
 									foreach( $popular_posts as $popular_post ) : setup_postdata( $popular_post );
@@ -45,7 +45,7 @@
 							if( ! empty( $recent_posts ) ) : // show only if we have posts
 							?>
 							<aside class="widget widget_recent_entries">
-								<h4 class="widget-title"><?php _e( 'Recent posts', 'flexflux' ); ?></h4>
+								<h4 class="widget-title"><?php _e( 'Recent posts', 'universio' ); ?></h4>
 								<ul>
 									<?php
 									foreach( $recent_posts as $recent_post ) : setup_postdata( $recent_post );
@@ -56,7 +56,7 @@
 							<?php endif; ?>
 
 							<aside class="widget widget_categories">
-								<h4 class="widget-title"><?php _e( 'Categories', 'flexflux' ); ?></h4>
+								<h4 class="widget-title"><?php _e( 'Categories', 'universio' ); ?></h4>
 								<ul>
 									<?php
 									$cat_args = array(
@@ -79,7 +79,7 @@
 							</aside>
 
 							<aside class="widget widget_meta">
-								<h4 class="widget-title"><?php _e( 'Meta', 'flexflux' ); ?></h4>
+								<h4 class="widget-title"><?php _e( 'Meta', 'universio' ); ?></h4>
 								<ul>
 									<?php wp_register(); ?>
 									<li><?php wp_loginout(); ?></li>

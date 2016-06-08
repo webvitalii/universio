@@ -1,11 +1,11 @@
 <?php
 
-define('FLEXFLUX_THEME_VERSION', '0.1');
+define('UNIVERSIO_THEME_VERSION', '0.1');
 
 
-include( 'inc/flexflux-functions.php' );
+include( 'inc/universio-functions.php' );
 
-include( 'inc/flexflux-settings.php' );
+include( 'inc/universio-settings.php' );
 
 
 if ( ! isset( $content_width ) ) {
@@ -13,10 +13,10 @@ if ( ! isset( $content_width ) ) {
 }
 
 
-if ( ! function_exists( 'flexflux_enqueue_scripts' ) ) :
-	function flexflux_enqueue_scripts() {
+if ( ! function_exists( 'universio_enqueue_scripts' ) ) :
+	function universio_enqueue_scripts() {
 		
-		$settings = flexflux_get_settings();
+		$settings = universio_get_settings();
 		if( $settings['use_cdn'] == 1 OR $settings['use_cdn'] == '1' ) {
 			$ionicon_path = '//code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css';
 		} else {
@@ -27,33 +27,33 @@ if ( ! function_exists( 'flexflux_enqueue_scripts' ) ) :
 			wp_enqueue_script( 'comment-reply' );
 		}
 
-		wp_enqueue_script( 'flexflux-script', get_template_directory_uri() . '/assets/js/flexflux.js', array( 'jquery' ), FLEXFLUX_THEME_VERSION );
+		wp_enqueue_script( 'universio-script', get_template_directory_uri() . '/assets/js/universio.js', array( 'jquery' ), UNIVERSIO_THEME_VERSION );
 		
-		wp_enqueue_style( 'flexflux-ionicons-style', $ionicon_path, array(), FLEXFLUX_THEME_VERSION, 'all' );
+		wp_enqueue_style( 'universio-ionicons-style', $ionicon_path, array(), UNIVERSIO_THEME_VERSION, 'all' );
 		
-		wp_enqueue_style( 'flexflux-flexify-style', get_template_directory_uri() . '/assets/flexify/css/flexify.css', array(), FLEXFLUX_THEME_VERSION, 'all' );
+		wp_enqueue_style( 'universio-flexify-style', get_template_directory_uri() . '/assets/flexify/css/flexify.css', array(), UNIVERSIO_THEME_VERSION, 'all' );
 		
-		wp_enqueue_style( 'flexflux-style', get_stylesheet_uri(), array(), FLEXFLUX_THEME_VERSION, 'all' ); // get_stylesheet_directory_uri() . '/style.css'
+		wp_enqueue_style( 'universio-style', get_stylesheet_uri(), array(), UNIVERSIO_THEME_VERSION, 'all' ); // get_stylesheet_directory_uri() . '/style.css'
 	}
-	add_action( 'wp_enqueue_scripts', 'flexflux_enqueue_scripts' );
+	add_action( 'wp_enqueue_scripts', 'universio_enqueue_scripts' );
 endif;
 
 
-if ( ! function_exists( 'flexflux_admin_enqueue_scripts' ) ) :
-	function flexflux_admin_enqueue_scripts() {
+if ( ! function_exists( 'universio_admin_enqueue_scripts' ) ) :
+	function universio_admin_enqueue_scripts() {
 		// including the WP media scripts here because they are needed for the image upload field
 		wp_enqueue_media();
 	}
-	add_action( 'admin_enqueue_scripts', 'flexflux_admin_enqueue_scripts' );
+	add_action( 'admin_enqueue_scripts', 'universio_admin_enqueue_scripts' );
 endif;
 
 
-if ( ! function_exists( 'flexflux_setup' ) ) :
-	function flexflux_setup() {
+if ( ! function_exists( 'universio_setup' ) ) :
+	function universio_setup() {
 
 		add_filter( 'widget_text', 'do_shortcode' ); // execute shortcodes in sidebar widgets
 
-		load_theme_textdomain( 'flexflux', get_template_directory() . '/languages' ); // make theme available for translation
+		load_theme_textdomain( 'universio', get_template_directory() . '/languages' ); // make theme available for translation
 
 		add_editor_style(); // visual editor style match the theme style (add editor-style.css)
 
@@ -63,7 +63,7 @@ if ( ! function_exists( 'flexflux_setup' ) ) :
 
 		//add_theme_support( 'post-formats', array( 'aside', 'gallery', 'link', 'image', 'quote', 'status', 'video', 'audio', 'chat', ) ); // post formats for future
 
-		register_nav_menu( 'primary-nav', __( 'Primary menu', 'flexflux' ) );
+		register_nav_menu( 'primary-nav', __( 'Primary menu', 'universio' ) );
 
 		add_theme_support( 'custom-background' );
 
@@ -94,17 +94,17 @@ if ( ! function_exists( 'flexflux_setup' ) ) :
 			'nature' => array(
 				'url' => '%s/img/headers/nature.jpg',
 				'thumbnail_url' => '%s/img/headers/nature-thumbnail.jpg',
-				'description' => __( 'Nature', 'flexflux' )
+				'description' => __( 'Nature', 'universio' )
 			),
 			'relax' => array(
 				'url' => '%s/img/headers/relax.jpg',
 				'thumbnail_url' => '%s/img/headers/relax-thumbnail.jpg',
-				'description' => __( 'Relax', 'flexflux' )
+				'description' => __( 'Relax', 'universio' )
 			),
 			'space' => array(
 				'url' => '%s/img/headers/space.jpg',
 				'thumbnail_url' => '%s/img/headers/space-thumbnail.jpg',
-				'description' => __( 'Space', 'flexflux' )
+				'description' => __( 'Space', 'universio' )
 			)
 		) );
 
@@ -121,15 +121,15 @@ if ( ! function_exists( 'flexflux_setup' ) ) :
 		*/
 
 	}
-	add_action( 'after_setup_theme', 'flexflux_setup' );
+	add_action( 'after_setup_theme', 'universio_setup' );
 endif;
 
 
 // register sidebars & footer widgets
-if ( ! function_exists( 'flexflux_register_widgets' ) ) :
-	function flexflux_register_widgets() {
+if ( ! function_exists( 'universio_register_widgets' ) ) :
+	function universio_register_widgets() {
 		register_sidebar( array(
-			'name' => __( 'Sidebar Left', 'flexflux' ),
+			'name' => __( 'Sidebar Left', 'universio' ),
 			'id' => 'sidebar_left',
 			//'description' => 'Sidebar Left.',
 			'before_widget' => '<aside id="%1$s" class="widget %2$s">',
@@ -138,7 +138,7 @@ if ( ! function_exists( 'flexflux_register_widgets' ) ) :
 			'after_title' => '</h4>',
 		) );
 		register_sidebar( array(
-			'name' => __( 'Sidebar Right', 'flexflux' ),
+			'name' => __( 'Sidebar Right', 'universio' ),
 			'id' => 'sidebar_right',
 			//'description' => 'Sidebar Right.',
 			'before_widget' => '<aside id="%1$s" class="widget %2$s">',
@@ -147,7 +147,7 @@ if ( ! function_exists( 'flexflux_register_widgets' ) ) :
 			'after_title' => '</h4>',
 		) );
 		register_sidebar( array(
-			'name' => __( 'Footer', 'flexflux' ),
+			'name' => __( 'Footer', 'universio' ),
 			'id' => 'footer',
 			//'description' => '',
 			'before_widget' => '<aside id="%1$s" class="widget %2$s">',
@@ -156,12 +156,12 @@ if ( ! function_exists( 'flexflux_register_widgets' ) ) :
 			'after_title' => '</h4>',
 		) );
 	}
-	add_action( 'widgets_init', 'flexflux_register_widgets' );
+	add_action( 'widgets_init', 'universio_register_widgets' );
 endif;
 
 
-if ( ! function_exists( 'flexflux_list_pages' ) ) :
-	function flexflux_list_pages() {
+if ( ! function_exists( 'universio_list_pages' ) ) :
+	function universio_list_pages() {
 		?>
 		<nav class="fx-menu fx-menu-dark">
 			<ul><?php wp_list_pages( 'title_li=' ); ?></ul>
@@ -171,8 +171,8 @@ if ( ! function_exists( 'flexflux_list_pages' ) ) :
 endif;
 
 
-if ( ! function_exists( 'flexflux_comments' ) ) :
-	function flexflux_comments( $comment, $args, $depth ) {
+if ( ! function_exists( 'universio_comments' ) ) :
+	function universio_comments( $comment, $args, $depth ) {
 		$GLOBALS['comment'] = $comment;
 		switch ( $comment->comment_type ) :
 			case 'pingback' :
@@ -182,13 +182,13 @@ if ( ! function_exists( 'flexflux_comments' ) ) :
 					<p>
 						<?php
 							if( $comment->comment_type == 'pingback' ) {
-								_e( 'Pingback:', 'flexflux' );
+								_e( 'Pingback:', 'universio' );
 							} else {
-								_e( 'Trackback:', 'flexflux' );
+								_e( 'Trackback:', 'universio' );
 							}
 						?>
 						<?php comment_author_link(); ?>
-						<?php edit_comment_link( '<span class="fx-btn"><i class="ionicon ion-edit"></i> '.__( 'Edit', 'flexflux' ).'</span>', '<span class="edit-link '.$comment->comment_type.'-edit-link">', '</span>' ); ?>
+						<?php edit_comment_link( '<span class="fx-btn"><i class="ionicon ion-edit"></i> '.__( 'Edit', 'universio' ).'</span>', '<span class="edit-link '.$comment->comment_type.'-edit-link">', '</span>' ); ?>
 					</p>
 					<?php
 				break;
@@ -214,24 +214,24 @@ if ( ! function_exists( 'flexflux_comments' ) ) :
 
 								global $post;
 								if( $comment->user_id === $post->post_author ) {
-									$post_author_label = ' <span class="label label-info">'.__( 'Post author', 'flexflux' ).'</span>';
+									$post_author_label = ' <span class="label label-info">'.__( 'Post author', 'universio' ).'</span>';
 								} else {
 									$post_author_label = '';
 								}
 								echo '<div class="comment-avatar">'.$comment_avatar_url_before.get_avatar( $comment, $avatar_size ).$comment_avatar_url_after.'</div>';
 
 								echo '<div class="comment-meta">';
-								echo '<span class="comment-meta-item comment-meta-item-author fn"><i class="ionicon ion-ios-person fx-icon fx-icon-20" title="'.esc_attr( __( 'Author', 'flexflux' ) ).'"></i> '.get_comment_author_link().$post_author_label.'</span> ';
-								echo '<span class="comment-meta-item comment-meta-item-date"><i class="ionicon ion-ios-calendar-outline fx-icon fx-icon-20" title="'.esc_attr( __( 'Published', 'flexflux' ) ).'"></i> <a href="'.esc_url( get_comment_link( $comment->comment_ID ) ).'"><time datetime="'.get_comment_time( 'c' ).'" title="'.get_comment_time().'">'.get_comment_date().'</time></a></span>';
+								echo '<span class="comment-meta-item comment-meta-item-author fn"><i class="ionicon ion-ios-person fx-icon fx-icon-20" title="'.esc_attr( __( 'Author', 'universio' ) ).'"></i> '.get_comment_author_link().$post_author_label.'</span> ';
+								echo '<span class="comment-meta-item comment-meta-item-date"><i class="ionicon ion-ios-calendar-outline fx-icon fx-icon-20" title="'.esc_attr( __( 'Published', 'universio' ) ).'"></i> <a href="'.esc_url( get_comment_link( $comment->comment_ID ) ).'"><time datetime="'.get_comment_time( 'c' ).'" title="'.get_comment_time().'">'.get_comment_date().'</time></a></span>';
 
-								edit_comment_link( '<span class="fx-btn"><i class="ionicon ion-edit"></i> '.__( 'Edit', 'flexflux' ).'</span>', '<span class="edit-link comment-edit-link">', '</span>' );
+								edit_comment_link( '<span class="fx-btn"><i class="ionicon ion-edit"></i> '.__( 'Edit', 'universio' ).'</span>', '<span class="edit-link comment-edit-link">', '</span>' );
 
 								echo '</div><!-- .comment-meta -->';
 								?>
 							</div><!-- .comment-author .vcard -->
 
 							<?php if ( $comment->comment_approved == '0' ) : ?>
-								<div class="alert alert-warning"><?php _e( 'Your comment is awaiting moderation.', 'flexflux' ); ?></div>
+								<div class="alert alert-warning"><?php _e( 'Your comment is awaiting moderation.', 'universio' ); ?></div>
 							<?php endif; ?>
 
 						</header><!-- .comment-meta -->
@@ -239,7 +239,7 @@ if ( ! function_exists( 'flexflux_comments' ) ) :
 						<div class="comment-content"><?php comment_text(); ?></div>
 
 						<div class="reply">
-							<?php comment_reply_link( array_merge( $args, array( 'reply_text' => '<span class="fx-btn"><i class="ionicon ion-ios-chatbubble fx-icon fx-icon-20"></i> '.__( 'Reply', 'flexflux' ).'</span>', 'depth' => $depth, 'max_depth' => $args['max_depth'] ) ) ); ?>
+							<?php comment_reply_link( array_merge( $args, array( 'reply_text' => '<span class="fx-btn"><i class="ionicon ion-ios-chatbubble fx-icon fx-icon-20"></i> '.__( 'Reply', 'universio' ).'</span>', 'depth' => $depth, 'max_depth' => $args['max_depth'] ) ) ); ?>
 						</div><!-- .reply -->
 					</article><!-- #comment-<?php comment_ID(); ?> -->
 
@@ -250,20 +250,20 @@ if ( ! function_exists( 'flexflux_comments' ) ) :
 endif;
 
 
-if ( ! function_exists( 'flexflux_post_date' ) ) :
-	function flexflux_post_date() {
-		$post_date = '<span class="entry-meta-item entry-meta-date"><i class="ionicon ion-ios-calendar-outline fx-icon fx-icon-20" title="'.esc_attr( __( 'Published', 'flexflux' ) ).'"></i> '.'<a href="'.esc_url( get_permalink() ).'" title="'.get_the_time().'"><time class="entry-date" datetime="'.get_the_date( 'c' ).'" title="'.get_the_time().'">'.get_the_date().'</time></a></span>'."\n";
+if ( ! function_exists( 'universio_post_date' ) ) :
+	function universio_post_date() {
+		$post_date = '<span class="entry-meta-item entry-meta-date"><i class="ionicon ion-ios-calendar-outline fx-icon fx-icon-20" title="'.esc_attr( __( 'Published', 'universio' ) ).'"></i> '.'<a href="'.esc_url( get_permalink() ).'" title="'.get_the_time().'"><time class="entry-date" datetime="'.get_the_date( 'c' ).'" title="'.get_the_time().'">'.get_the_date().'</time></a></span>'."\n";
 		return $post_date;
 	}
 endif;
 
 
-if ( ! function_exists( 'flexflux_post_sticky' ) ) :
-	function flexflux_post_sticky() {
+if ( ! function_exists( 'universio_post_sticky' ) ) :
+	function universio_post_sticky() {
 		$post_sticky = '';
 
 		if( is_sticky() ) { // add 'sticky' label to sticky post
-			$sticky = ' <i class="ionicon ion-pin fx-icon fx-icon-20"></i><span class="label label-info">'.__( 'Sticky', 'flexflux' ).'</span>';
+			$sticky = ' <i class="ionicon ion-pin fx-icon fx-icon-20"></i><span class="label label-info">'.__( 'Sticky', 'universio' ).'</span>';
 			$post_sticky = '<span class="entry-meta-item entry-meta-sticky">'.$sticky.'</span>'."\n";
 		}
 
@@ -272,33 +272,33 @@ if ( ! function_exists( 'flexflux_post_sticky' ) ) :
 endif;
 
 
-if ( ! function_exists( 'flexflux_post_author' ) ) :
-	function flexflux_post_author() { // author
+if ( ! function_exists( 'universio_post_author' ) ) :
+	function universio_post_author() { // author
 		global $authordata;
 		if ( !is_object( $authordata ) )
 			return false;
-		$post_author = '<span class="entry-meta-item entry-meta-author"><i class="ionicon ion-ios-person fx-icon fx-icon-20" title="'.esc_attr( __( 'Author', 'flexflux' ) ).'"></i> <a href="'.esc_url( get_author_posts_url( $authordata->ID, $authordata->user_nicename ) ).'" title="'.esc_attr(  __( 'Author', 'flexflux' ) ).'">'.get_the_author().'</a></span>'."\n";
+		$post_author = '<span class="entry-meta-item entry-meta-author"><i class="ionicon ion-ios-person fx-icon fx-icon-20" title="'.esc_attr( __( 'Author', 'universio' ) ).'"></i> <a href="'.esc_url( get_author_posts_url( $authordata->ID, $authordata->user_nicename ) ).'" title="'.esc_attr(  __( 'Author', 'universio' ) ).'">'.get_the_author().'</a></span>'."\n";
 		return $post_author;
 	}
 endif;
 
 
-if ( ! function_exists( 'flexflux_comments_count' ) ) :
-	function flexflux_comments_count() {
+if ( ! function_exists( 'universio_comments_count' ) ) :
+	function universio_comments_count() {
 		$post_comments_count = '';
 		if ( get_comments_number() != '0' ) {
-			$post_comments_count = '<span class="entry-meta-item entry-meta-comments-count"><i class="ionicon ion-ios-chatbubble fx-icon fx-icon-20" title="'.esc_attr( __( 'Comments', 'flexflux' ) ).'"></i> <a href="'.esc_url( get_permalink() ).'#comments" title="'.__( 'Comments', 'flexflux' ).'">'.get_comments_number().'</a></span>'."\n";
+			$post_comments_count = '<span class="entry-meta-item entry-meta-comments-count"><i class="ionicon ion-ios-chatbubble fx-icon fx-icon-20" title="'.esc_attr( __( 'Comments', 'universio' ) ).'"></i> <a href="'.esc_url( get_permalink() ).'#comments" title="'.__( 'Comments', 'universio' ).'">'.get_comments_number().'</a></span>'."\n";
 		}
 		return $post_comments_count;
 	}
 endif;
 
 
-if ( ! function_exists( 'flexflux_post_categories' ) ) :
-	function flexflux_post_categories() { // list of categories
-		$post_categories = get_the_category_list( __( ', ', 'flexflux' ) );
+if ( ! function_exists( 'universio_post_categories' ) ) :
+	function universio_post_categories() { // list of categories
+		$post_categories = get_the_category_list( __( ', ', 'universio' ) );
 		if ( !empty( $post_categories ) ) {
-			return '<span class="entry-meta-item entry-meta-categories"><i class="ionicon ion-ios-folder fx-icon fx-icon-20" title="'.esc_attr( __( 'Categories', 'flexflux' ) ).'"></i> '.$post_categories.'</span>'."\n";
+			return '<span class="entry-meta-item entry-meta-categories"><i class="ionicon ion-ios-folder fx-icon fx-icon-20" title="'.esc_attr( __( 'Categories', 'universio' ) ).'"></i> '.$post_categories.'</span>'."\n";
 		} else {
 			return ''; // no categories
 		}
@@ -306,11 +306,11 @@ if ( ! function_exists( 'flexflux_post_categories' ) ) :
 endif;
 
 
-if ( ! function_exists( 'flexflux_post_tags' ) ) :
-	function flexflux_post_tags() { // list of tags
-		$post_tags = get_the_tag_list( '', __( ', ', 'flexflux' ), '' );
+if ( ! function_exists( 'universio_post_tags' ) ) :
+	function universio_post_tags() { // list of tags
+		$post_tags = get_the_tag_list( '', __( ', ', 'universio' ), '' );
 		if( !empty( $post_tags ) ){
-			return '<span class="entry-meta-item entry-meta-tags"><i class="ionicon ion-ios-pricetag fx-icon fx-icon-20" title="'.esc_attr( __( 'Tags', 'flexflux' ) ).'"></i> '.$post_tags.'</span>'."\n";
+			return '<span class="entry-meta-item entry-meta-tags"><i class="ionicon ion-ios-pricetag fx-icon fx-icon-20" title="'.esc_attr( __( 'Tags', 'universio' ) ).'"></i> '.$post_tags.'</span>'."\n";
 		}else{
 			return ''; // no tags
 		}
@@ -318,10 +318,10 @@ if ( ! function_exists( 'flexflux_post_tags' ) ) :
 endif;
 
 
-if ( ! function_exists( 'flexflux_post_meta' ) ) :
-	function flexflux_post_meta() { // post meta
-		$post_meta = '<div class="entry-meta-row">'."\n" . flexflux_post_sticky() . flexflux_post_author() . flexflux_post_date() . flexflux_comments_count() . flexflux_post_categories() . '</div>'."\n";
-		$post_tags = flexflux_post_tags();
+if ( ! function_exists( 'universio_post_meta' ) ) :
+	function universio_post_meta() { // post meta
+		$post_meta = '<div class="entry-meta-row">'."\n" . universio_post_sticky() . universio_post_author() . universio_post_date() . universio_comments_count() . universio_post_categories() . '</div>'."\n";
+		$post_tags = universio_post_tags();
 		if( !empty( $post_tags ) && is_single() ){
 			$post_meta .= '<div class="entry-meta-row">'."\n" . $post_tags . '</div>'."\n";
 		}
@@ -331,8 +331,8 @@ if ( ! function_exists( 'flexflux_post_meta' ) ) :
 endif;
 
 
-if ( ! function_exists( 'flexflux_nav' ) ) :
-	function flexflux_nav() { // show next/prev posts navigation links when needed
+if ( ! function_exists( 'universio_nav' ) ) :
+	function universio_nav() { // show next/prev posts navigation links when needed
 		global $wp_query;
 		$nav = '';
 		$nav_prev = '';
@@ -353,8 +353,8 @@ if ( ! function_exists( 'flexflux_nav' ) ) :
 endif;
 
 
-if ( ! function_exists( 'flexflux_nav_comments' ) ) :
-	function flexflux_nav_comments() { // show next/prev comments navigation links when needed
+if ( ! function_exists( 'universio_nav_comments' ) ) :
+	function universio_nav_comments() { // show next/prev comments navigation links when needed
 		$nav = '';
 		$nav_prev = '';
 		$nav_next = '';
@@ -378,16 +378,16 @@ if ( ! function_exists( 'flexflux_nav_comments' ) ) :
 endif;
 
 
-if ( ! function_exists( 'flexflux_excerpt_more' ) ) :
-	function flexflux_excerpt_more( $more ) { // "more-link" is bad for seo and for usability - http://web-profile.net/web/web-principles/more-link/
+if ( ! function_exists( 'universio_excerpt_more' ) ) :
+	function universio_excerpt_more( $more ) { // "more-link" is bad for seo and for usability - http://web-profile.net/web/web-principles/more-link/
 		return '...';
 	}
-	add_filter('excerpt_more', 'flexflux_excerpt_more');
+	add_filter('excerpt_more', 'universio_excerpt_more');
 endif;
 
 
-if ( ! function_exists( 'flexflux_is_homepage' ) ) :
-	function flexflux_is_homepage() {
+if ( ! function_exists( 'universio_is_homepage' ) ) :
+	function universio_is_homepage() {
 		global $paged;
 		// if( is_home() || is_front_page() ){} // simple way
 		$show_on_front = get_option( 'show_on_front' ); // page or posts
@@ -408,68 +408,68 @@ if ( ! function_exists( 'flexflux_is_homepage' ) ) :
 endif;
 
 
-if ( ! function_exists( 'flexflux_rss_button' ) ) :
-	function flexflux_rss_button() { // output content to the footer section
+if ( ! function_exists( 'universio_rss_button' ) ) :
+	function universio_rss_button() { // output content to the footer section
 		$output = '';
 		if ( is_category() ) {
-			$output = '<a href="'.get_category_feed_link( get_query_var( 'cat' ) ).'" class="rss-feed-link" title="'.esc_attr( __( 'Category RSS feed', 'flexflux' ) ).'"><i class="ionicon ion-social-rss fx-icon fx-icon-20"></i></a>';
+			$output = '<a href="'.get_category_feed_link( get_query_var( 'cat' ) ).'" class="rss-feed-link" title="'.esc_attr( __( 'Category RSS feed', 'universio' ) ).'"><i class="ionicon ion-social-rss fx-icon fx-icon-20"></i></a>';
 		} elseif ( is_tag() ) {
-			$output = '<a href="'.get_tag_feed_link( get_query_var( 'tag_id' ) ).'" class="rss-feed-link" title="'.esc_attr( __( 'Tag RSS feed', 'flexflux' ) ).'"><i class="ionicon ion-social-rss fx-icon fx-icon-20"></i></a>';
+			$output = '<a href="'.get_tag_feed_link( get_query_var( 'tag_id' ) ).'" class="rss-feed-link" title="'.esc_attr( __( 'Tag RSS feed', 'universio' ) ).'"><i class="ionicon ion-social-rss fx-icon fx-icon-20"></i></a>';
 		} elseif ( is_author() ) {
-			$output = '<a href="'.get_author_feed_link( get_the_author_meta( 'ID' ) ).'" class="rss-feed-link" title="'.esc_attr( __( 'Author RSS feed', 'flexflux' ) ).'"><i class="ionicon ion-social-rss fx-icon fx-icon-20"></i></a>';
+			$output = '<a href="'.get_author_feed_link( get_the_author_meta( 'ID' ) ).'" class="rss-feed-link" title="'.esc_attr( __( 'Author RSS feed', 'universio' ) ).'"><i class="ionicon ion-social-rss fx-icon fx-icon-20"></i></a>';
 		}
 		return $output;
 	}
 endif;
 
 
-if ( ! function_exists( 'flexflux_wp_head' ) ) :
-	function flexflux_wp_head() { // output content to the head section
+if ( ! function_exists( 'universio_wp_head' ) ) :
+	function universio_wp_head() { // output content to the head section
 
-		$settings = flexflux_get_settings();
+		$settings = universio_get_settings();
 		$code_head = $settings['code_head'];
 		$max_width = $settings['max_width'];
 		
 		if ( ! empty( $max_width ) ) {
-			echo "\n".'<!-- Flexflux settings -->'."\n";
+			echo "\n".'<!-- Universio settings -->'."\n";
 			echo '<style type="text/css">'."\n";
 			echo '.site-container {'."\n";
 			echo '	max-width: '.$max_width.'px;'."\n";
 			echo '}'."\n";
 			echo '</style>'."\n";
-			echo "\n".'<!-- end of Flexflux settings -->'."\n";
+			echo "\n".'<!-- end of Universio settings -->'."\n";
 		}
 		
 		if ( ! empty( $code_head ) ) {
-			echo "\n".'<!-- Flexflux head code -->'."\n";
+			echo "\n".'<!-- Universio head code -->'."\n";
 			echo $code_head;
-			echo "\n".'<!-- end of Flexflux head code -->'."\n";
+			echo "\n".'<!-- end of Universio head code -->'."\n";
 		}
 		
 	}
-	add_action( 'wp_head', 'flexflux_wp_head' );
+	add_action( 'wp_head', 'universio_wp_head' );
 endif;
 
 
-if ( ! function_exists( 'flexflux_wp_footer' ) ) :
-	function flexflux_wp_footer() { // output content to the footer section
+if ( ! function_exists( 'universio_wp_footer' ) ) :
+	function universio_wp_footer() { // output content to the footer section
 
-		$settings = flexflux_get_settings();
+		$settings = universio_get_settings();
 		$code_footer = $settings['code_footer'];
 		
 		$ga_code = $settings['ga_code'];
 		$ga_code_hide_if_loggedin = $settings['ga_code_hide_if_loggedin'];
 		
 		if ( ! empty( $code_footer ) ) {
-			echo "\n".'<!-- Flexflux footer code -->'."\n";
+			echo "\n".'<!-- Universio footer code -->'."\n";
 			echo $code_footer;
-			echo "\n".'<!-- end of Flexflux footer code -->'."\n";
+			echo "\n".'<!-- end of Universio footer code -->'."\n";
 		}
 		
 		
 		if ( ! empty( $ga_code ) ) {
 			if( !is_user_logged_in() || ( is_user_logged_in() && !$ga_code_hide_if_loggedin ) ) {
-				echo "\n".'<!-- Flexflux Google Analytics code -->'."\n";
+				echo "\n".'<!-- Universio Google Analytics code -->'."\n";
 				?>
 <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -481,10 +481,10 @@ if ( ! function_exists( 'flexflux_wp_footer' ) ) :
   ga('send', 'pageview');
 </script>
 				<?php
-				echo "\n".'<!-- end of Flexflux Google Analytics code -->'."\n";
+				echo "\n".'<!-- end of Universio Google Analytics code -->'."\n";
 			}
 		}
 
 	}
-	add_action( 'wp_footer', 'flexflux_wp_footer' );
+	add_action( 'wp_footer', 'universio_wp_footer' );
 endif;

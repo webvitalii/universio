@@ -1,0 +1,17 @@
+/*
+Theme Name: Universio Child Theme
+Theme URI: http://web-profile.net/wordpress/themes/universio/
+Description: Use this theme to start your Universio child theme development.
+Author: You
+Author URI: https://wordpress.org/
+Template: universio
+Version: 100
+*/
+
+@import url("../universio/style.css");
+
+/* you can override everything you want */
+
+body {
+    padding: 50px; 
+}

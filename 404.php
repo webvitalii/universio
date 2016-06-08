@@ -6,13 +6,13 @@
 
 					<article class="post error-404 page-not-found">
 						<header class="entry-header page-header">
-							<h1 class="entry-title"><?php _e( 'Page not found. Error 404', 'flexflux' ); ?></h1>
+							<h1 class="entry-title"><?php _e( 'Page not found. Error 404', 'universio' ); ?></h1>
 						</header><!-- .entry-header -->
 
 
 						<div class="entry-content">
 							<div class="alert alert-danger">
-								<?php _e( 'The URL you requested could not be found.', 'flexflux' ); ?>
+								<?php _e( 'The URL you requested could not be found.', 'universio' ); ?>
 							</div>
 
 							<?php get_search_form(); ?>
