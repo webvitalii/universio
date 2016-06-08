@@ -50,6 +50,8 @@ add_action('admin_init', 'flexflux_settings_init');
 function flexflux_settings_validate($input) {
 	$default_settings = flexflux_get_settings();
 	$output['use_cdn'] = $input['use_cdn'];
+	$output['ga_code_hide_if_loggedin'] = $input['ga_code_hide_if_loggedin'];
+	
 	$output['max_width'] = trim($input['max_width']);
 	$output['layout'] = trim($input['layout']);
 	$output['logo_url'] = trim($input['logo_url']);

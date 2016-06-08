@@ -468,9 +468,9 @@ if ( ! function_exists( 'flexflux_wp_footer' ) ) :
 		
 		
 		if ( ! empty( $ga_code ) ) {
-			// if( !is_user_logged_in() ) {}
-			echo "\n".'<!-- Flexflux Google Analytics code -->'."\n";
-			?>
+			if( !is_user_logged_in() || ( is_user_logged_in() && !$ga_code_hide_if_loggedin ) ) {
+				echo "\n".'<!-- Flexflux Google Analytics code -->'."\n";
+				?>
 <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -480,8 +480,9 @@ if ( ! function_exists( 'flexflux_wp_footer' ) ) :
   ga('create', '<?php echo $ga_code; ?>', 'auto');
   ga('send', 'pageview');
 </script>
-			<?php
-			echo "\n".'<!-- end of Flexflux Google Analytics code -->'."\n";
+				<?php
+				echo "\n".'<!-- end of Flexflux Google Analytics code -->'."\n";
+			}
 		}
 
 	}
