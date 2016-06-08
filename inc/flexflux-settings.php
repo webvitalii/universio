@@ -109,7 +109,7 @@ function flexflux_field_logo_callback() {
 	echo '<a href="#" class="button button-small js-media-choose">'.__( 'Choose image', 'flexflux' ).'</a>';
 	
 	if( !empty( $settings['logo_url'] ) ) {
-		echo '<img src="'.$settings['logo_url'].'" />';
+		echo '<div><img src="'.$settings['logo_url'].'" /></div>';
 	}
 	
 	?>
