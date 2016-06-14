@@ -66,7 +66,7 @@ if ( universio_is_homepage() ) {
 ?>
 
 				<header class="site-header fx-clearfix">
-
+					<div class="fx-padding-all">
 					<?php if ( ! empty( $logo_url ) ) : ?>
 					<div class="site-logo">
 						<?php echo $link_before; ?><img src="<?php echo $logo_url; ?>" alt="<?php echo $title_desc; ?>"><?php echo $link_after; ?>
@@ -78,14 +78,16 @@ if ( universio_is_homepage() ) {
 					<?php if ( get_bloginfo( 'description' ) ) : ?>
 					<h5 class="site-description text-muted"><?php bloginfo( 'description' ); ?></h5>
 					<?php endif; ?>
-
+					</div><!-- .fx-padding-all -->
 				</header><!-- .site-header -->
 
 
 
 	<?php if ( get_header_image() ) : ?>
 	<header class="site-header">
+		<div class="fx-padding-all">
 		<a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>"><img src="<?php header_image(); ?>" class="header-image" width="<?php echo esc_attr( get_custom_header()->width ); ?>" alt="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" /></a>
+		</div><!-- .fx-padding-all -->
 	</header><!-- .site-header -->
 	<?php endif; ?>
 	
