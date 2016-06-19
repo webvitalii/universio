@@ -9,7 +9,7 @@ include( 'inc/universio-settings.php' );
 
 
 if ( ! isset( $content_width ) ) {
-	$content_width = 800;
+	$content_width = 1200;
 }
 
 
@@ -68,12 +68,12 @@ if ( ! function_exists( 'universio_setup' ) ) :
 		add_theme_support( 'custom-background' );
 
 		add_theme_support( 'post-thumbnails' ); // featured images
-		set_post_thumbnail_size( 800, 9999 ); // unlimited height, soft crop
+		set_post_thumbnail_size( 1200, 9999 ); // unlimited height, soft crop
 
 		add_theme_support( 'woocommerce' );
 		
 		$custom_header_args = array(
-			'default-image'          => get_template_directory_uri() . '/img/headers/nature.jpg',
+			'default-image'          => get_template_directory_uri() . '/assets/img/header/office.jpg',
 			'random-default'         => true, // random image rotation
 			'header-text'            => false, // disable editing styles for text in header
 
@@ -91,20 +91,10 @@ if ( ! function_exists( 'universio_setup' ) ) :
 		add_theme_support( 'custom-header', $custom_header_args ); // custom header See http://codex.wordpress.org/Custom_Headers
 
 		register_default_headers( array( // default custom headers packaged with the theme (%s is a placeholder for the theme template directory URI)
-			'nature' => array(
-				'url' => '%s/img/headers/nature.jpg',
-				'thumbnail_url' => '%s/img/headers/nature-thumbnail.jpg',
-				'description' => __( 'Nature', 'universio' )
-			),
-			'relax' => array(
-				'url' => '%s/img/headers/relax.jpg',
-				'thumbnail_url' => '%s/img/headers/relax-thumbnail.jpg',
-				'description' => __( 'Relax', 'universio' )
-			),
-			'space' => array(
-				'url' => '%s/img/headers/space.jpg',
-				'thumbnail_url' => '%s/img/headers/space-thumbnail.jpg',
-				'description' => __( 'Space', 'universio' )
+			'office' => array(
+				'url' => '%s/assets/img/header/office.jpg',
+				'thumbnail_url' => '%s/assets/img/header/office-thumbnail.jpg',
+				'description' => __( 'Office', 'universio' )
 			)
 		) );
 
