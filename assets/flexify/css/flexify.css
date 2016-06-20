@@ -1185,6 +1185,8 @@ template {
 .fx-wrap [type="datetime-local"],
 .fx-wrap [type="color"],
 .fx-wrap textarea {
+	display: block;
+	width: 100%;
 	padding: 6px 12px;
 	font-size: 16px;
 	line-height: 16px;
@@ -1321,17 +1323,6 @@ template {
 .fx-wrap input[type="number"]::-webkit-inner-spin-button,
 .fx-wrap input[type="number"]::-webkit-outer-spin-button {
 	height: auto;
-}
-
-.fx-wrap input[type="search"] {
-	-webkit-box-sizing: content-box;
-	box-sizing: content-box;
-	-webkit-appearance: textfield;
-}
-
-.fx-wrap input[type="search"]::-webkit-search-cancel-button,
-.fx-wrap input[type="search"]::-webkit-search-decoration {
-	-webkit-appearance: none;
 }
 
 
