@@ -1,5 +1,5 @@
 
-<article id="post-<?php the_ID(); ?>" <?php post_class('fx-clearfix'); ?>>
+<article <?php post_class('fx-clearfix'); ?>>
 
 	<header class="entry-header page-header">
 		<h1 class="entry-title"><?php the_title(); ?></h1>
@@ -12,4 +12,4 @@
 		<?php wp_link_pages( array( 'before' => '<div class="wp_link_pages fx-clearfix"><span class="wp_link_pages-item-empty">' . __( 'Pages:', 'universio' ).'</span>', 'after' => '</div>', 'link_before' => '<span class="wp_link_pages-item">', 'link_after' => '</span>', 'pagelink' => '%' ) ); ?>
 	</section><!-- .entry-content -->
 
-</article><!-- #post-<?php the_ID(); ?> -->
+</article>

@@ -168,7 +168,7 @@ if ( ! function_exists( 'universio_comments' ) ) :
 			case 'pingback' :
 			case 'trackback' :
 				?>
-				<li <?php comment_class(); ?> id="comment-<?php comment_ID(); ?>">
+				<li <?php comment_class('fx-clearfix'); ?> id="comment-<?php comment_ID(); ?>">
 					<p>
 						<?php
 							if( $comment->comment_type == 'pingback' ) {
@@ -184,8 +184,8 @@ if ( ! function_exists( 'universio_comments' ) ) :
 				break;
 			default :
 				?>
-				<li <?php comment_class(); ?> id="li-comment-<?php comment_ID(); ?>">
-					<article id="comment-<?php comment_ID(); ?>" class="fx-clearfix">
+				<li <?php comment_class('fx-clearfix'); ?> id="comment-<?php comment_ID(); ?>">
+					<article>
 						<header class="comment-header">
 							<div class="comment-author vcard fx-clearfix">
 								<?php
@@ -231,7 +231,7 @@ if ( ! function_exists( 'universio_comments' ) ) :
 						<div class="reply">
 							<?php comment_reply_link( array_merge( $args, array( 'reply_text' => '<span class="fx-btn"><i class="ionicon ion-ios-chatbubble fx-icon fx-icon-20"></i> '.__( 'Reply', 'universio' ).'</span>', 'depth' => $depth, 'max_depth' => $args['max_depth'] ) ) ); ?>
 						</div><!-- .reply -->
-					</article><!-- #comment-<?php comment_ID(); ?> -->
+					</article>
 
 				<?php
 				break;

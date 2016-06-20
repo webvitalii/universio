@@ -5,10 +5,9 @@
 <?php get_template_part( 'template-parts/wrap', 'before' ); ?>
 
 
-
 					<?php while ( have_posts() ) : the_post(); // the loop ?>
 
-							<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+							<article <?php post_class('fx-clearfix'); ?>>
 								<header class="entry-header page-header">
 									<h1 class="entry-title"><?php the_title(); ?></h1>
 
@@ -48,8 +47,9 @@
 												'orderby'        => 'menu_order ID'
 											) ) );
 											foreach ( $attachments as $k => $attachment ) {
-												if ( $attachment->ID == $post->ID )
+												if ( $attachment->ID == $post->ID ) {
 													break;
+												}
 											}
 											$k++;
 											// If there is more than 1 attachment in a gallery
@@ -83,9 +83,7 @@
 
 								</div><!-- .entry-content -->
 
-
-							</article><!-- #post-<?php the_ID(); ?> -->
-
+							</article>
 
 					<?php endwhile; // end of the loop ?>
 
