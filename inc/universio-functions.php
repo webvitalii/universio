@@ -9,12 +9,13 @@ function universio_default_settings() {
 	$settings = array(
 		'max_width' => 1200,
 		'layout' => 'content-sidebar',
-		'list_excerpt_or_content' => 'excerpt',
 		'code_head' => '',
 		'code_footer' => '',
 		'use_cdn' => 0,
 		'ga_code' => '',
-		'ga_code_hide_if_loggedin' => 1
+		'ga_code_hide_if_loggedin' => 1,
+		'list_columns' => '1',
+		'list_excerpt_or_content' => 'excerpt'
 	);
 	return $settings;
 }

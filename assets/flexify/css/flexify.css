@@ -1381,6 +1381,18 @@ template {
 	column-gap: 30px;
 }
 
+.fx-columns-1 {
+	-webkit-column-count: 1;
+	-moz-column-count: 1;
+	column-count: 1;
+}
+
+.fx-columns-2 {
+	-webkit-column-count: 2;
+	-moz-column-count: 2;
+	column-count: 2;
+}
+
 .fx-columns-3 {
 	-webkit-column-count: 3;
 	-moz-column-count: 3;

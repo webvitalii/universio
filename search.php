@@ -4,6 +4,10 @@
 
 <?php get_template_part( 'template-parts/wrap', 'before' ); ?>
 
+<?php
+$settings = universio_get_settings();
+$list_columns = $settings['list_columns'];
+?>
 
 		<?php if ( have_posts() ) : ?>
 
@@ -18,13 +22,17 @@
 		</header><!-- .entry-header .page-header -->
 
 		<?php echo universio_nav(); ?>
-
+			
+			<div class="fx-columns fx-columns-<?php echo $list_columns; ?>">
+			
 			<?php while ( have_posts() ) : the_post(); // the loop ?>
 
 				<?php get_template_part( 'content', 'search' ); ?>
 
 			<?php endwhile; ?>
-
+			
+			</div><!-- .fx-columns -->
+			
 		<?php echo universio_nav(); ?>
 
 		<?php else : ?>
