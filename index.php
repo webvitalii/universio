@@ -29,15 +29,7 @@ $list_columns = $settings['list_columns'];
 
 				<?php else : ?>
 
-					<article class="post no-results not-found">
-						<header class="entry-header page-header">
-							<h1 class="entry-title"><?php _e( 'No posts to display', 'universio' ); ?></h1>
-						</header><!-- .entry-header -->
-
-						<div class="entry-content">
-							<?php get_search_form(); ?>
-						</div><!-- .entry-content -->
-					</article>
+					<?php get_template_part( 'template-parts/nothing', 'found' ); ?>
 
 				<?php endif; ?>
 
