@@ -66,7 +66,7 @@ if ( universio_is_homepage() ) {
 ?>
 
 	<header class="site-header fx-clearfix">
-		<div class="fx-padding-all">
+		<div class="fx-padding-all fx-clearfix">
 		<?php if ( ! empty( $logo_url ) ) : ?>
 		<div class="site-logo">
 			<?php echo $link_before; ?><img src="<?php echo $logo_url; ?>" alt="<?php echo $title_desc; ?>"><?php echo $link_after; ?>

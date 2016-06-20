@@ -522,7 +522,7 @@ body.admin-bar .fx-fixed-top { /* move menu below admin-bar */
 }
 .site-logo img {
 	max-width: 250px;
-	max-height: 200px;
+	max-height: 110px;
 }
 .site-logo a img {
 	padding: 0;
