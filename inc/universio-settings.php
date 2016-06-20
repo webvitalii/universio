@@ -25,7 +25,7 @@ function universio_admin_init() {
 	add_settings_field('max_width', __( 'Maximum width of the website', 'universio' ), 'universio_field_max_width_callback', 'universio_general_page', 'universio_settings_general_section');
 	add_settings_field('layout', __( 'Layout', 'universio' ), 'universio_field_layout_callback', 'universio_general_page', 'universio_settings_general_section');
 	add_settings_field('logo_url', __( 'Logo', 'universio' ), 'universio_field_logo_callback', 'universio_general_page', 'universio_settings_general_section');
-	add_settings_field('excerpt_or_content_in_list', __( 'Show excerpt or content in the list', 'universio' ), 'universio_field_excerpt_or_content_callback', 'universio_general_page', 'universio_settings_general_section');
+	add_settings_field('list_excerpt_or_content', __( 'Show excerpt or content in the list', 'universio' ), 'universio_field_excerpt_or_content_callback', 'universio_general_page', 'universio_settings_general_section');
 	add_settings_field('code_head', __( 'Head code', 'universio' ), 'universio_field_code_head_callback', 'universio_general_page', 'universio_settings_general_section');
 	add_settings_field('code_footer', __( 'Footer code', 'universio' ), 'universio_field_code_footer_callback', 'universio_general_page', 'universio_settings_general_section');
 	add_settings_field('use_cdn', __( 'Use CDN', 'universio' ), 'universio_field_use_cdn_callback', 'universio_general_page', 'universio_settings_general_section');
@@ -55,7 +55,7 @@ function universio_settings_validate($input) {
 	$output['max_width'] = trim($input['max_width']);
 	$output['layout'] = trim($input['layout']);
 	$output['logo_url'] = trim($input['logo_url']);
-	$output['excerpt_or_content_in_list'] = trim($input['excerpt_or_content_in_list']);
+	$output['list_excerpt_or_content'] = trim($input['list_excerpt_or_content']);
 	$output['code_head'] = trim($input['code_head']);
 	$output['code_footer'] = trim($input['code_footer']);
 	
@@ -84,7 +84,7 @@ function universio_field_layout_callback() {
 	$settings = universio_get_settings();
 	$default_settings = universio_default_settings();
 	
-	$options = array(
+	$layout_options = array(
 		'content-sidebar' => __( 'content / sidebar-right', 'universio' ),
 		'sidebar-content' => __( 'sidebar-left / content', 'universio' ),
 		'content' => __( 'content (full width, no sidebars)', 'universio' ),
@@ -93,13 +93,7 @@ function universio_field_layout_callback() {
 		'sidebar-sidebar-content' => __( 'sidebar-left / sidebar-right / content', 'universio' )
 	);
 	
-	foreach ( $options as $key => $value ):
-		$checked = '';
-		if ( $settings['layout'] == $key ) {
-			$checked = ' checked="checked"';
-		}
-		echo '<p><label><input type="radio" name="universio_settings[layout]" value="'.$key.'"  '.$checked.'> '.$value.'<label></p>'."\n";
-	endforeach;
+	echo '<p>'.universio_settings_dropdown('layout', $layout_options, $settings['layout']).'</p>';
 	echo '<p class="description">'.__( 'General layout settings', 'universio' ).'</p>';
 }
 
@@ -147,18 +141,12 @@ function universio_field_excerpt_or_content_callback() {
 	$settings = universio_get_settings();
 	$default_settings = universio_default_settings();
 	
-	$options = array(
+	$list_options = array(
 		'excerpt' => __( 'Excerpt', 'universio' ),
 		'content' => __( 'Full content', 'universio' )
 	);
 	
-	foreach ( $options as $key => $value ):
-		$checked = '';
-		if ( $settings['excerpt_or_content_in_list'] == $key ) {
-			$checked = ' checked="checked"';
-		}
-		echo '<p><label><input type="radio" name="universio_settings[excerpt_or_content_in_list]" value="'.$key.'"  '.$checked.'> '.$value.'<label></p>'."\n";
-	endforeach;
+	echo '<p>'.universio_settings_dropdown('list_excerpt_or_content', $list_options, $settings['list_excerpt_or_content']).'</p>';
 	echo '<p class="description">'.__( 'Show excerpt or full content in the list of posts', 'universio' ).'</p>';
 }
 

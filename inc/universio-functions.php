@@ -9,7 +9,7 @@ function universio_default_settings() {
 	$settings = array(
 		'max_width' => 1200,
 		'layout' => 'content-sidebar',
-		'excerpt_or_content_in_list' => 'excerpt',
+		'list_excerpt_or_content' => 'excerpt',
 		'code_head' => '',
 		'code_footer' => '',
 		'use_cdn' => 0,
@@ -25,4 +25,18 @@ function universio_get_settings() {
 	$default_settings = universio_default_settings();
 	$universio_settings = array_merge($default_settings, $universio_settings); // use default settings if custom settings are empty
 	return $universio_settings;
+}
+
+
+function universio_settings_dropdown($name, $options, $selected) {
+	$dropdown_html = '';
+	foreach ( $options as $key => $value ):
+		$selected_html = '';
+		if ( $selected == $key ) {
+			$selected_html = ' selected';
+		}
+		$dropdown_html .= '<option value="'.$key.'"'.$selected_html.'>'.$value.'</option>';
+	endforeach;
+	$dropdown_html = '<select name="universio_settings['.$name.']">'.$dropdown_html.'</select>';
+	return $dropdown_html;
 }

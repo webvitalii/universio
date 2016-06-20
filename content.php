@@ -15,8 +15,8 @@
 
 		<?php
 		$settings = universio_get_settings();
-		$excerpt_or_content_in_list = $settings['excerpt_or_content_in_list'];
-		if( $excerpt_or_content_in_list == 'excerpt' ) {
+		$list_excerpt_or_content = $settings['list_excerpt_or_content'];
+		if( $list_excerpt_or_content == 'excerpt' ) {
 			the_excerpt( '' );
 		} else {
 			the_content( '' );
