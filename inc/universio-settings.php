@@ -21,12 +21,12 @@ function universio_admin_init() {
 	register_setting('universio_settings_group', 'universio_settings', 'universio_settings_validate');
 
 	add_settings_section('universio_settings_general_section', '', 'universio_section_callback', 'universio_general_page');
+	add_settings_section('universio_settings_list_section', '', 'universio_section_callback', 'universio_list_page');
 	
 	add_settings_field('max_width', __( 'Maximum width of the website', 'universio' ), 'universio_field_max_width_callback', 'universio_general_page', 'universio_settings_general_section');
 	add_settings_field('layout', __( 'Layout', 'universio' ), 'universio_field_layout_callback', 'universio_general_page', 'universio_settings_general_section');
 	add_settings_field('logo_url', __( 'Logo', 'universio' ), 'universio_field_logo_callback', 'universio_general_page', 'universio_settings_general_section');
-	add_settings_field('list_excerpt_or_content', __( 'Show excerpt or content in the list', 'universio' ), 'universio_field_excerpt_or_content_callback', 'universio_general_page', 'universio_settings_general_section');
-	add_settings_field('code_head', __( 'Head code', 'universio' ), 'universio_field_code_head_callback', 'universio_general_page', 'universio_settings_general_section');
+		add_settings_field('code_head', __( 'Head code', 'universio' ), 'universio_field_code_head_callback', 'universio_general_page', 'universio_settings_general_section');
 	add_settings_field('code_footer', __( 'Footer code', 'universio' ), 'universio_field_code_footer_callback', 'universio_general_page', 'universio_settings_general_section');
 	add_settings_field('use_cdn', __( 'Use CDN', 'universio' ), 'universio_field_use_cdn_callback', 'universio_general_page', 'universio_settings_general_section');
 	
@@ -35,6 +35,7 @@ function universio_admin_init() {
 	add_settings_field('ga_code_hide_if_loggedin', __( 'Hide Google analytics code if use is logged in', 'universio' ), 'universio_field_ga_code_hide_if_loggedin_callback', 'universio_general_page', 'universio_settings_general_section');
 	
 	
+	add_settings_field('list_excerpt_or_content', __( 'Show excerpt or content in the list', 'universio' ), 'universio_field_excerpt_or_content_callback', 'universio_list_page', 'universio_settings_list_section');
 }
 add_action('admin_init', 'universio_admin_init');
 
@@ -199,13 +200,44 @@ function universio_settings() {
 		<h2><span class="dashicons dashicons-admin-generic" style="position: relative; top: 4px;"></span> 
 			<?php echo __( 'Universio Settings', 'universio' ); ?></h2>
 		
+		
+		<h2 class="nav-tab-wrapper">
+			<a href="#" class="nav-tab universio-tab-general">General</a>
+			<a href="#" class="nav-tab universio-tab-list">List</a>
+		</h2>
+		
 		<form method="post" action="options.php">
 			<?php settings_fields('universio_settings_group'); ?>
 			<div class="universio-group-general">
 				<?php do_settings_sections('universio_general_page'); ?>
 			</div>
+			<div class="universio-group-list">
+				<?php do_settings_sections('universio_list_page'); ?>
+			</div>
 			<?php submit_button(); ?>
 		</form>
+
+
+		<script>
+			jQuery(function($){
+				$('.universio-tab-general').click(function(event) {
+					event.preventDefault();
+					$(this).addClass('nav-tab-active').siblings().removeClass('nav-tab-active');
+					$('.universio-group-general').slideDown();
+					$('.universio-group-list').slideUp();
+				});
+
+				$('.universio-tab-list').click(function(event) {
+					event.preventDefault();
+					$(this).addClass('nav-tab-active').siblings().removeClass('nav-tab-active');
+					$('.universio-group-list').slideDown();
+					$('.universio-group-general').slideUp();
+				});
+
+				$('.universio-tab-general').click();
+			});
+		</script>
+	
 	
 	</div><!-- .wrap -->
 	<?php
