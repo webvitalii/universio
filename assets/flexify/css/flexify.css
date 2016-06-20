@@ -1183,7 +1183,8 @@ template {
 .fx-wrap [type="time"],
 .fx-wrap [type="datetime"],
 .fx-wrap [type="datetime-local"],
-.fx-wrap [type="color"] {
+.fx-wrap [type="color"],
+.fx-wrap textarea {
 	padding: 6px 12px;
 	font-size: 16px;
 	line-height: 16px;
@@ -1428,6 +1429,46 @@ template {
 .fx-columns .fx-column {
 	-webkit-column-break-inside: avoid;
 	break-inside: avoid;
+}
+
+/* ========== labels ========== */
+
+.fx-label {
+	background-color: #818a91;
+	display: inline-block;
+	padding: 2px 4px;
+	font-size: 75%;
+	font-weight: bold;
+	line-height: 1;
+	color: #fff;
+	text-align: center;
+	white-space: nowrap;
+	vertical-align: baseline;
+	border-radius: 3px;
+}
+
+.fx-label:empty {
+	display: none;
+}
+
+.fx-label-primary {
+	background-color: #0275d8;
+}
+
+.fx-label-success {
+	background-color: #5cb85c;
+}
+
+.fx-label-info {
+	background-color: #5bc0de;
+}
+
+.fx-label-warning {
+	background-color: #f0ad4e;
+}
+
+.fx-label-danger {
+	background-color: #d9534f;
 }
 
 /* ========== helpers ========== */

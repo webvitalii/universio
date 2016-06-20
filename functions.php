@@ -204,7 +204,7 @@ if ( ! function_exists( 'universio_comments' ) ) :
 
 								global $post;
 								if( $comment->user_id === $post->post_author ) {
-									$post_author_label = ' <span class="label label-info">'.__( 'Post author', 'universio' ).'</span>';
+									$post_author_label = ' <span class="fx-label fx-label-info">'.__( 'Post author', 'universio' ).'</span>';
 								} else {
 									$post_author_label = '';
 								}
@@ -253,7 +253,7 @@ if ( ! function_exists( 'universio_post_sticky' ) ) :
 		$post_sticky = '';
 
 		if( is_sticky() ) { // add 'sticky' label to sticky post
-			$sticky = ' <i class="ionicon ion-pin fx-icon fx-icon-20"></i><span class="label label-info">'.__( 'Sticky', 'universio' ).'</span>';
+			$sticky = ' <i class="ionicon ion-pin fx-icon fx-icon-20"></i><span class="fx-label fx-label-info">'.__( 'Sticky', 'universio' ).'</span>';
 			$post_sticky = '<span class="entry-meta-item entry-meta-sticky">'.$sticky.'</span>'."\n";
 		}
 
