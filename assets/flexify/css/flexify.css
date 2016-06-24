@@ -1431,7 +1431,11 @@ template {
 
 .fx-columns .fx-column {
 	-webkit-column-break-inside: avoid;
+	page-break-inside: avoid;
 	break-inside: avoid;
+	/* to fix the issue when bottom margin can go to the next column */
+	display: inline-block;
+	width: 100%;
 }
 
 /* ========== labels ========== */
