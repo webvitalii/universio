@@ -2,9 +2,9 @@
 				<div class="fx-box-sm-3 fx-padding-all fx-bg-gray-lightest">
 					<div class="widget-area widget-area-right">
 
-						<?php if ( ! dynamic_sidebar( 'sidebar_right' ) ) : // sidebar widgetized area ?>
+						<?php if ( ! dynamic_sidebar( 'sidebar_right' ) ) : // sidebar right widgetized area ?>
 							<?php
-								// show something if there is no widgets in main sidebar
+								// show something if there is no widgets in right sidebar
 							?>
 
 							<aside class="widget widget_search">
@@ -86,7 +86,7 @@
 								</ul>
 							</aside>
 
-						<?php endif; // end of the sidebar widgetized area ?>
+						<?php endif; // end of the widgetized area ?>
 
 					</div><!-- .widget-area .widget-area-right -->
 				</div><!-- .fx-box -->

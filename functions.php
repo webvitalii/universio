@@ -119,18 +119,18 @@ endif;
 if ( ! function_exists( 'universio_register_widgets' ) ) :
 	function universio_register_widgets() {
 		register_sidebar( array(
-			'name' => __( 'Sidebar Left', 'universio' ),
-			'id' => 'sidebar_left',
-			//'description' => 'Sidebar Left.',
+			'name' => __( 'Right Sidebar', 'universio' ),
+			'id' => 'sidebar_right',
+			//'description' => 'Right Sidebar.',
 			'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 			'after_widget' => '</aside>',
 			'before_title' => '<h4 class="widget-title">',
 			'after_title' => '</h4>',
 		) );
 		register_sidebar( array(
-			'name' => __( 'Sidebar Right', 'universio' ),
-			'id' => 'sidebar_right',
-			//'description' => 'Sidebar Right.',
+			'name' => __( 'Left Sidebar', 'universio' ),
+			'id' => 'sidebar_left',
+			//'description' => 'Left Sidebar.',
 			'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 			'after_widget' => '</aside>',
 			'before_title' => '<h4 class="widget-title">',
@@ -138,7 +138,7 @@ if ( ! function_exists( 'universio_register_widgets' ) ) :
 		) );
 		register_sidebar( array(
 			'name' => __( 'Footer', 'universio' ),
-			'id' => 'footer',
+			'id' => 'sidebar_footer',
 			//'description' => '',
 			'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 			'after_widget' => '</aside>',

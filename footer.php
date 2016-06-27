@@ -5,14 +5,19 @@
 </div><!-- #main .site-main -->
 
 
+<?php
+get_sidebar( 'footer' );
+?>
+
+
 <footer class="site-footer fx-clearfix">
 
 	<div class="fx-grid">
 
 		<div class="fx-box-sm-8 fx-padding-all">
-			<?php if ( ! dynamic_sidebar( 'footer' ) ) : // the footer widgetized area ?>
-				<!-- no widgets in footer -->
-			<?php endif; // end of the footer widgetized area ?>
+			&copy; <?php echo date('Y'); ?>
+			<a href="<?php esc_url( home_url( '/' ) ); ?>" 
+			title="<?php echo esc_attr( get_bloginfo( 'description', 'display' )); ?>"><?php bloginfo( 'name' ); ?></a>
 		</div><!-- .fx-box -->
 
 		<div class="fx-box-sm-4 fx-padding-all fx-text-right">

@@ -2,9 +2,9 @@
 				<div class="fx-box-sm-3 fx-padding-all fx-bg-gray-lightest">
 					<div class="widget-area widget-area-left">
 
-						<?php if ( ! dynamic_sidebar( 'sidebar_left' ) ) : // sidebar widgetized area ?>
+						<?php if ( ! dynamic_sidebar( 'sidebar_left' ) ) : // sidebar left widgetized area ?>
 							<?php
-								// show something if there is no widgets in main sidebar
+								// show something if there is no widgets in left sidebar
 							?>
 
 							<aside class="widget widget_pages">
@@ -19,7 +19,7 @@
 								<?php wp_tag_cloud(); ?>
 							</aside>
 
-						<?php endif; // end of the sidebar widgetized area ?>
+						<?php endif; // end of the widgetized area ?>
 
 					</div><!-- .widget-area .widget-area-left -->
 				</div><!-- .fx-box -->
