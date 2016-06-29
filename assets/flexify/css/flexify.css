@@ -1338,7 +1338,13 @@ template {
 	border-top: 2px solid #eceeef;
 }
 
-.fx-wrap table caption,
+.fx-wrap table caption {
+	display: table-caption;
+	text-align: center;
+	padding-top: 12px;
+	padding-bottom: 12px;
+}
+
 .fx-wrap table th,
 .fx-wrap table td {
 	font-weight: normal;
@@ -1362,12 +1368,6 @@ template {
 
 .fx-wrap table thead th {
 	vertical-align: bottom;
-}
-
-.fx-wrap table caption {
-	padding-top: 12px;
-	padding-bottom: 12px;
-	caption-side: bottom;
 }
 
 /* ========== columns ========== */
