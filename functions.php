@@ -140,7 +140,7 @@ if ( ! function_exists( 'universio_register_widgets' ) ) :
 			'name' => __( 'Footer', 'universio' ),
 			'id' => 'sidebar_footer',
 			//'description' => '',
-			'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+			'before_widget' => '<aside id="%1$s" class="fx-column widget %2$s">',
 			'after_widget' => '</aside>',
 			'before_title' => '<h4 class="widget-title">',
 			'after_title' => '</h4>',
