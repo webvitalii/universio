@@ -1,5 +1,5 @@
 
-				<div class="fx-box-sm-3 fx-padding-all fx-bg-gray-lightest">
+				<div class="fx-box-sm-3 fx-padding-all site-sidebar-left">
 					<div class="widget-area widget-area-left">
 
 						<?php if ( ! dynamic_sidebar( 'sidebar_left' ) ) : // sidebar left widgetized area ?>

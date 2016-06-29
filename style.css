@@ -543,6 +543,11 @@ body.admin-bar .fx-fixed-top { /* move menu below admin-bar */
 	font-weight: bold;
 }
 
+.site-sidebar-left,
+.site-sidebar-right {
+	background-color: #f1f1f1;
+}
+
 /* ========== calendar widget ========== */
 .widget-area .widget_calendar table td#today {
 	background: #f2f7fc;
