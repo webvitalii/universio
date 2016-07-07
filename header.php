@@ -7,7 +7,7 @@
 <link rel="profile" href="http://gmpg.org/xfn/11">
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
 
-<?php wp_head(); // wp_head() should be just before the closing </head> tag, or many plugins will be broken ?>
+<?php wp_head(); ?>
 
 </head>
 
@@ -87,6 +87,25 @@ if ( universio_is_homepage() ) {
 	<header class="site-header-image">
 		<a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>"><img src="<?php header_image(); ?>" class="header-image" width="<?php echo esc_attr( get_custom_header()->width ); ?>" alt="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" /></a>
 	</header><!-- .site-header -->
+	<?php endif; ?>
+	
+	
+	<?php
+	$settings = universio_get_settings();
+	$header_widgets_columns = $settings['header_widgets_columns'];
+	?>
+	<?php if ( is_active_sidebar( 'header_widgets' ) ) : ?>
+	<div class="fx-padding-all site-sidebar-header">
+		<div class="widget-area widget-area-header">
+			<div class="fx-columns fx-columns-<?php echo $header_widgets_columns; ?>">
+			<?php if ( ! dynamic_sidebar( 'header_widgets' ) ) : // header widgetized area ?>
+				<?php
+					// show nothing if there is no widgets in header sidebar
+				?>
+			<?php endif; // end of the sidebar widgetized area ?>
+			</div><!-- .fx-columns -->
+		</div><!-- .widget-area .widget-area-header -->
+	</div><!-- .fx-padding-all -->
 	<?php endif; ?>
 	
 	

@@ -33,9 +33,11 @@ function universio_admin_init() {
 	add_settings_field('ga_code', __( 'Google analytics code', 'universio' ), 'universio_field_ga_code_callback', 'universio_general_page', 'universio_settings_general_section');
 	
 	add_settings_field('ga_code_hide_if_loggedin', __( 'Hide Google analytics code if use is logged in', 'universio' ), 'universio_field_ga_code_hide_if_loggedin_callback', 'universio_general_page', 'universio_settings_general_section');
+
+	add_settings_field('header_widgets_columns', __( 'Number of columns in the header', 'universio' ), 'universio_field_header_widgets_columns_callback', 'universio_general_page', 'universio_settings_general_section');
 	
-	add_settings_field('footer_columns', __( 'Number of columns in the footer', 'universio' ), 'universio_field_footer_columns_callback', 'universio_general_page', 'universio_settings_general_section');
-	
+	add_settings_field('footer_widgets_columns', __( 'Number of columns in the footer', 'universio' ), 'universio_field_footer_widgets_columns_callback', 'universio_general_page', 'universio_settings_general_section');
+
 	add_settings_field('list_columns', __( 'Number of columns in the list', 'universio' ), 'universio_field_list_columns_callback', 'universio_list_page', 'universio_settings_list_section');
 	add_settings_field('list_excerpt_or_content', __( 'Show excerpt or content in the list', 'universio' ), 'universio_field_excerpt_or_content_callback', 'universio_list_page', 'universio_settings_list_section');
 	
@@ -65,7 +67,8 @@ function universio_settings_validate($input) {
 	
 	$output['ga_code'] = trim($input['ga_code']);
 
-	$output['footer_columns'] = trim($input['footer_columns']);
+	$output['header_widgets_columns'] = trim($input['header_widgets_columns']);
+	$output['footer_widgets_columns'] = trim($input['footer_widgets_columns']);
 	
 	$output['list_columns'] = trim($input['list_columns']);
 	$output['list_excerpt_or_content'] = trim($input['list_excerpt_or_content']);
@@ -146,19 +149,35 @@ function universio_field_logo_callback() {
 }
 
 
-function universio_field_footer_columns_callback() {
+function universio_field_footer_widgets_columns_callback() {
 	$settings = universio_get_settings();
 	$default_settings = universio_default_settings();
 	
-	$footer_columns_options = array(
+	$footer_widgets_columns_options = array(
 		'1' => __( '1 column', 'universio' ),
 		'2' => __( '2 columns', 'universio' ),
 		'3' => __( '3 columns', 'universio' ),
 		'4' => __( '4 columns', 'universio' )
 	);
 	
-	echo '<p>'.universio_settings_dropdown('footer_columns', $footer_columns_options, $settings['footer_columns']).'</p>';
+	echo '<p>'.universio_settings_dropdown('footer_widgets_columns', $footer_widgets_columns_options, $settings['footer_widgets_columns']).'</p>';
 	echo '<p class="description">'.__( 'Number of columns for footer widgets.', 'universio' ).'</p>';
+}
+
+
+function universio_field_header_widgets_columns_callback() {
+	$settings = universio_get_settings();
+	$default_settings = universio_default_settings();
+	
+	$header_widgets_columns_options = array(
+		'1' => __( '1 column', 'universio' ),
+		'2' => __( '2 columns', 'universio' ),
+		'3' => __( '3 columns', 'universio' ),
+		'4' => __( '4 columns', 'universio' )
+	);
+	
+	echo '<p>'.universio_settings_dropdown('header_widgets_columns', $header_widgets_columns_options, $settings['header_widgets_columns']).'</p>';
+	echo '<p class="description">'.__( 'Number of columns for header widgets.', 'universio' ).'</p>';
 }
 
 

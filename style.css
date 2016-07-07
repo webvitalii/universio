@@ -532,7 +532,7 @@ body.admin-bar .fx-fixed-top { /* move menu below admin-bar */
 
 /* ========== sidebar ========== */
 .widget-area .widget {
-	margin: 0 0 40px 0;
+	margin: 0 0 20px 0;
 }
 .widget-area .widget .widget-title {
 	font-size: 18px;
@@ -624,4 +624,8 @@ table#wp-calendar td, table#wp-calendar th {
 }
 .site-footer a:hover {
 	color: #555;
+}
+
+.site-sidebar-footer {
+	background-color: #f1f1f1;
 }

@@ -137,8 +137,17 @@ if ( ! function_exists( 'universio_register_widgets' ) ) :
 			'after_title' => '</h4>',
 		) );
 		register_sidebar( array(
-			'name' => __( 'Footer', 'universio' ),
-			'id' => 'sidebar_footer',
+			'name' => __( 'Header Widgetized Area', 'universio' ),
+			'id' => 'header_widgets',
+			//'description' => '',
+			'before_widget' => '<aside id="%1$s" class="fx-column widget %2$s">',
+			'after_widget' => '</aside>',
+			'before_title' => '<h4 class="widget-title">',
+			'after_title' => '</h4>',
+		) );
+		register_sidebar( array(
+			'name' => __( 'Footer Widgetized Area', 'universio' ),
+			'id' => 'footer_widgets',
 			//'description' => '',
 			'before_widget' => '<aside id="%1$s" class="fx-column widget %2$s">',
 			'after_widget' => '</aside>',

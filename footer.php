@@ -6,8 +6,22 @@
 
 
 <?php
-get_sidebar( 'footer' );
+$settings = universio_get_settings();
+$footer_widgets_columns = $settings['footer_widgets_columns'];
 ?>
+<?php if ( is_active_sidebar( 'footer_widgets' ) ) : ?>
+	<div class="fx-padding-all site-sidebar-footer">
+		<div class="widget-area widget-area-footer">
+			<div class="fx-columns fx-columns-<?php echo $footer_widgets_columns; ?>">
+			<?php if ( ! dynamic_sidebar( 'footer_widgets' ) ) : // footer widgetized area ?>
+				<?php
+					// show nothing if there is no widgets in footer sidebar
+				?>
+			<?php endif; // end of the sidebar widgetized area ?>
+			</div><!-- .fx-columns -->
+		</div><!-- .widget-area .widget-area-footer -->
+	</div><!-- .fx-padding-all -->
+<?php endif; ?>
 
 
 <footer class="site-footer fx-clearfix">
@@ -42,7 +56,7 @@ get_sidebar( 'footer' );
 
 </div><!-- #page .hfeed -->
 
-<?php wp_footer(); // wp_footer() should be just before the closing </body> tag, or many plugins will be broken  ?>
+<?php wp_footer();  ?>
 
 </body>
 

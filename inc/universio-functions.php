@@ -14,7 +14,8 @@ function universio_default_settings() {
 		'use_cdn' => 0,
 		'ga_code' => '',
 		'ga_code_hide_if_loggedin' => 1,
-		'footer_columns' => '1',
+		'header_widgets_columns' => '1',
+		'footer_widgets_columns' => '1',
 		'list_columns' => '1',
 		'list_excerpt_or_content' => 'excerpt'
 	);
