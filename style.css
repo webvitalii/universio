@@ -82,7 +82,7 @@ img.aligncenter{
 }
 img[class*="wp-image-"] {
 	height: auto;
-	max-width: 97.5%;
+	max-width: 100%;
 }
 img.size-full {
 	width: auto; /* prevent stretching of full-size images in IE8 */
@@ -95,13 +95,13 @@ img.wp-smiley {
 }
 
 .entry-content img, .comment-content img, .widget img {
-	max-width: 97.5%; /* fluid images for posts, comments, and widgets */
+	max-width: 100%; /* fluid images for posts, comments, and widgets */
 }
 img[class*="align"], img[class*="wp-image-"], img[class*="attachment-"] {
 	height: auto; /* make sure images with WordPress-added height and width attributes are scaled correctly */
 }
 img.size-full, img.size-large {
-	max-width: 97.5%;
+	max-width: 100%;
 	width: auto; /* prevent stretching of full-size and large-size images with height and width attributes in IE8 */
 	height: auto; /* make sure images with WordPress-added height and width attributes are scaled correctly */
 }
