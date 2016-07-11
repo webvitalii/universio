@@ -46,11 +46,6 @@
 
 
 <?php
-
-$settings = universio_get_settings();
-
-$logo_url = $settings['logo_url'];
-
 $title_desc = esc_attr( get_bloginfo( 'name', 'display' ) );
 if ( get_bloginfo( 'description' ) ) { // add desc to title attr
 	$title_desc .= ' | '.esc_attr( get_bloginfo( 'description', 'display' ) );
@@ -67,11 +62,9 @@ if ( universio_is_homepage() ) {
 
 	<header class="site-header fx-clearfix">
 		<div class="fx-padding-all fx-clearfix">
-		<?php if ( ! empty( $logo_url ) ) : ?>
-		<div class="site-logo">
-			<?php echo $link_before; ?><img src="<?php echo $logo_url; ?>" alt="<?php echo $title_desc; ?>"><?php echo $link_after; ?>
-		</div><!-- .site-logo -->
-		<?php endif; ?>
+		<div class="site-header-logo">
+			<?php universio_custom_logo(); ?>
+		</div><!-- .site-header-logo -->
 	
 		<h3 class="site-title"><?php echo $link_before; ?><?php bloginfo( 'name' ); ?><?php echo $link_after; ?></h3>
 

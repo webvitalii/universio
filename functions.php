@@ -60,7 +60,13 @@ if ( ! function_exists( 'universio_setup' ) ) :
 		add_theme_support( 'automatic-feed-links' ); // add RSS feed links to <head> for posts and comments
 
 		add_theme_support( 'title-tag' ); // let WordPress manage the document title
-
+		
+		add_theme_support( 'custom-logo', array(
+			'height' => 200,
+			'width' => 200,
+			'flex-height' => true,
+		) );
+		
 		//add_theme_support( 'post-formats', array( 'aside', 'gallery', 'link', 'image', 'quote', 'status', 'video', 'audio', 'chat', ) ); // post formats for future
 
 		register_nav_menu( 'primary-nav', __( 'Primary menu', 'universio' ) );
@@ -455,6 +461,15 @@ if ( ! function_exists( 'universio_rss_button' ) ) :
 		}
 		return $output;
 	}
+endif;
+
+
+if ( ! function_exists( 'universio_custom_logo' ) ) :
+function universio_custom_logo() {
+	if ( function_exists( 'the_custom_logo' ) ) {
+		the_custom_logo();
+	}
+}
 endif;
 
 

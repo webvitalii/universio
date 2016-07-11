@@ -11,16 +11,15 @@ Responsive and flexible theme. Features: 6 layouts (1, 2 or 3 columns), widget-r
 
 * Responsive and flexible
 * 6 layouts: 1-column (content), 2-columns (content/sidebar-right, sidebar-left/content), 3-columns (content/sidebar-left/sidebar-right, sidebar-left/content/sidebar-right, sidebar-left/sidebar-right/content)
-* fixed multi-level drop down menu
-* widget-ready 2 sidebars and footer areas
+* Fixed multi-level drop down menu
+* 8 widget areas: Left Sidedar, Right Sidebar, Header Widgets, Footer Widgets, Above Content Widgets, Below Content Widgets, Above Lisp Widgets, Below List Widgets
 * 2 extra page templates: "full width (no sidebar)" and "redirect to first subpage"
-* support for: custom background, custom header, custom menu, editor style, post thumbnails, microformats, rtl language support, sticky post and threaded-comments
+* Support for: custom background, custom header, custom menu, editor style, post thumbnails, microformats, rtl language support, sticky post and threaded-comments
 * Search Engines Friendly
-* automatic rss-feeds in the head section, added rss-feed links for posts, comments, categories, tags and authors
-* all site elements are intuitive and users will use the site more easily
+* Automatic rss-feeds in the head section, added rss-feed links for posts, comments, categories, tags and authors
+* All site elements are intuitive and users will use the site more easily
 * WooCommerce support
-* translation ready; Ukrainian, Russian, Hebrew and German translations included
-* includes a sample WordPress Child theme for rapid development
+* Includes a sample WordPress Child theme to speedup the development process
 
 
 = Universio theme settings: =

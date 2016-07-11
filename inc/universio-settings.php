@@ -25,8 +25,8 @@ function universio_admin_init() {
 	
 	add_settings_field('max_width', __( 'Maximum width of the website', 'universio' ), 'universio_field_max_width_callback', 'universio_general_page', 'universio_settings_general_section');
 	add_settings_field('layout', __( 'Layout', 'universio' ), 'universio_field_layout_callback', 'universio_general_page', 'universio_settings_general_section');
-	add_settings_field('logo_url', __( 'Logo', 'universio' ), 'universio_field_logo_callback', 'universio_general_page', 'universio_settings_general_section');
-		add_settings_field('code_head', __( 'Head code', 'universio' ), 'universio_field_code_head_callback', 'universio_general_page', 'universio_settings_general_section');
+
+	add_settings_field('code_head', __( 'Head code', 'universio' ), 'universio_field_code_head_callback', 'universio_general_page', 'universio_settings_general_section');
 	add_settings_field('code_footer', __( 'Footer code', 'universio' ), 'universio_field_code_footer_callback', 'universio_general_page', 'universio_settings_general_section');
 	add_settings_field('use_cdn', __( 'Use CDN', 'universio' ), 'universio_field_use_cdn_callback', 'universio_general_page', 'universio_settings_general_section');
 	
@@ -60,7 +60,6 @@ function universio_settings_validate($input) {
 	
 	$output['max_width'] = trim($input['max_width']);
 	$output['layout'] = trim($input['layout']);
-	$output['logo_url'] = trim($input['logo_url']);
 
 	$output['code_head'] = trim($input['code_head']);
 	$output['code_footer'] = trim($input['code_footer']);
@@ -107,45 +106,6 @@ function universio_field_layout_callback() {
 	
 	echo '<p>'.universio_settings_dropdown('layout', $layout_options, $settings['layout']).'</p>';
 	echo '<p class="description">'.__( 'General layout settings', 'universio' ).'</p>';
-}
-
-
-function universio_field_logo_callback() {
-	$settings = universio_get_settings();
-	$default_settings = universio_default_settings();
-	echo '<input type="text" name="universio_settings[logo_url]" class="regular-text js-media-input" value="'.$settings['logo_url'].'" />';
-	echo '<a href="#" class="button button-small js-media-choose">'.__( 'Choose image', 'universio' ).'</a>';
-	
-	if( !empty( $settings['logo_url'] ) ) {
-		echo '<div><img src="'.$settings['logo_url'].'" /></div>';
-	}
-	
-	?>
-	
-	<script>
-	jQuery(function($){ // document.ready and noConflict mode
-		var custom_media_uploader;
-		$( '.js-media-choose' ).click( function( event ) {
-			event.preventDefault();
-			custom_media_uploader = wp.media.frames.file_frame = wp.media( {
-				title: '<?php _e( 'Choose image', 'universio' ); ?>',
-				button: {
-					text: '<?php _e( 'Choose image', 'universio' ); ?>'
-				},
-				multiple: false
-			});
-			custom_media_uploader.on( 'select', function() {
-				var attachment = custom_media_uploader.state().get( 'selection' ).first().toJSON();
-				$( '.js-media-input' ).val( attachment.url );
-			});
-			custom_media_uploader.open();
-		});
-	});
-	</script>
-
-	<?php
-	
-	echo '<p class="description"></p>';
 }
 
 

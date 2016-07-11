@@ -516,19 +516,26 @@ body.admin-bar .fx-fixed-top { /* move menu below admin-bar */
 /* ========== site-header ========== */
 .site-header {}
 
-.site-logo {
+.site-header-logo {
 	float: left;
 	margin: 0 30px 0 0;
 }
-.site-logo img {
-	max-width: 250px;
-	max-height: 110px;
+.site-header-logo img {
+	width: auto;
+	height: auto;
+	/*max-width: 250px;*/
+	max-height: 100px;
 }
-.site-logo a img {
+.site-header-logo a img {
 	padding: 0;
 	border: 0;
 }
 
+.custom-logo-link {
+	display: block;
+}
+
+.custom-logo {}
 
 /* ========== sidebar ========== */
 .widget-area .widget {
