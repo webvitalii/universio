@@ -36,13 +36,13 @@ Responsive and flexible theme. Features: 6 layouts (1, 2 or 3 columns), widget-r
 == Changelog ==
 
 
-= 0.1 - 2016-06-30 =
+= 1.0 - 2016-07-11 =
 * initial release
 
 
 == Other Notes ==
 
-Universio theme, copyright 2016 http://webio.ca/
+Universio theme, copyright 2016 http://vitalii.webio.ca/
 Universio theme is distributed under the terms of the GNU GPL
 
 
@@ -51,11 +51,3 @@ Universio theme is distributed under the terms of the GNU GPL
 * [Flexify](http://flexify.webio.ca/) licensed under [MIT](http://opensource.org/licenses/MIT)
 * [Ionicons](http://ionicons.com/) licensed under [MIT](http://opensource.org/licenses/MIT)
 * [Pixabay](http://pixabay.com/) public domain images
-
-
-= Images used: =
-
-* http://pixabay.com/en/summer-field-sky-clouds-outdoors-69557/
-* http://pixabay.com/en/beach-beautiful-blue-coast-84560/
-* http://pixabay.com/en/solar-flare-flare-explosion-67532/
-* http://pixabay.com/en/baby-boy-child-childhood-computer-84626/

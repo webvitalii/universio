@@ -1,6 +1,6 @@
 <?php
 
-define('UNIVERSIO_THEME_VERSION', '0.1');
+define('UNIVERSIO_THEME_VERSION', '1.0');
 
 
 include( 'inc/universio-functions.php' );
