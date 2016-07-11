@@ -10,7 +10,9 @@ $list_columns = $settings['list_columns'];
 ?>
 
 				<?php if (have_posts()) : ?>
-
+					
+					<?php get_template_part( 'template-parts/before-list', 'widgets' ); ?>
+					
 					<header class="entry-header page-header">
 						<h1 class="entry-title"><?php
 							echo get_the_archive_title();
@@ -41,6 +43,8 @@ $list_columns = $settings['list_columns'];
 					</div><!-- .fx-columns -->
 					
 					<?php echo universio_nav(); ?>
+					
+					<?php get_template_part( 'template-parts/after-list', 'widgets' ); ?>
 
 				<?php else : ?>
 

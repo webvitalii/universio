@@ -11,7 +11,7 @@ $list_columns = $settings['list_columns'];
 
 				<?php if (have_posts()) : ?>
 					
-					<?php echo universio_nav(); ?>
+					<?php get_template_part( 'template-parts/before-list', 'widgets' ); ?>
 					
 					<div class="fx-columns fx-columns-<?php echo $list_columns; ?>">
 					
@@ -26,6 +26,8 @@ $list_columns = $settings['list_columns'];
 					</div><!-- .fx-columns -->
 					
 					<?php echo universio_nav(); ?>
+					
+					<?php get_template_part( 'template-parts/after-list', 'widgets' ); ?>
 
 				<?php else : ?>
 

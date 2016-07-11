@@ -4,7 +4,11 @@
 
 <?php get_template_part( 'template-parts/wrap', 'before' ); ?>
 
+	<?php get_template_part( 'template-parts/before-list', 'widgets' ); ?>
+
 	<?php woocommerce_content(); ?>
+	
+	<?php get_template_part( 'template-parts/after-list', 'widgets' ); ?>
 
 <?php get_template_part( 'template-parts/wrap', 'after' ); ?>
 

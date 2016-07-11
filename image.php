@@ -6,7 +6,9 @@
 
 
 					<?php while ( have_posts() ) : the_post(); // the loop ?>
-
+							
+							<?php get_template_part( 'template-parts/before-content', 'widgets' ); ?>
+							
 							<article <?php post_class('fx-clearfix'); ?>>
 								<header class="entry-header page-header">
 									<h1 class="entry-title"><?php the_title(); ?></h1>
@@ -84,6 +86,8 @@
 								</div><!-- .entry-content -->
 
 							</article>
+							
+							<?php get_template_part( 'template-parts/after-content', 'widgets' ); ?>
 
 					<?php endwhile; // end of the loop ?>
 

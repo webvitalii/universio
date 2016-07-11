@@ -95,17 +95,17 @@ if ( universio_is_homepage() ) {
 	$header_widgets_columns = $settings['header_widgets_columns'];
 	?>
 	<?php if ( is_active_sidebar( 'header_widgets' ) ) : ?>
-	<div class="fx-padding-all site-sidebar-header">
+	<div class="fx-padding-all site-header-widgets">
 		<div class="widget-area widget-area-header">
 			<div class="fx-columns fx-columns-<?php echo $header_widgets_columns; ?>">
-			<?php if ( ! dynamic_sidebar( 'header_widgets' ) ) : // header widgetized area ?>
+			<?php if ( ! dynamic_sidebar( 'header_widgets' ) ) : ?>
 				<?php
-					// show nothing if there is no widgets in header sidebar
+					// show nothing if there is no widgets
 				?>
-			<?php endif; // end of the sidebar widgetized area ?>
+			<?php endif; ?>
 			</div><!-- .fx-columns -->
 		</div><!-- .widget-area .widget-area-header -->
-	</div><!-- .fx-padding-all -->
+	</div><!-- .fx-padding-all .site-header-widgets -->
 	<?php endif; ?>
 	
 	

@@ -154,6 +154,42 @@ if ( ! function_exists( 'universio_register_widgets' ) ) :
 			'before_title' => '<h4 class="widget-title">',
 			'after_title' => '</h4>',
 		) );
+		register_sidebar( array(
+			'name' => __( 'Before Content Widgetized Area', 'universio' ),
+			'id' => 'before_content_widgets',
+			'description' => 'Shown before the content of pages and posts',
+			'before_widget' => '<aside id="%1$s" class="fx-column widget %2$s">',
+			'after_widget' => '</aside>',
+			'before_title' => '<h4 class="widget-title">',
+			'after_title' => '</h4>',
+		) );
+		register_sidebar( array(
+			'name' => __( 'After Content Widgetized Area', 'universio' ),
+			'id' => 'after_content_widgets',
+			'description' => 'Shown after the content of pages and posts',
+			'before_widget' => '<aside id="%1$s" class="fx-column widget %2$s">',
+			'after_widget' => '</aside>',
+			'before_title' => '<h4 class="widget-title">',
+			'after_title' => '</h4>',
+		) );
+		register_sidebar( array(
+			'name' => __( 'Before List Widgetized Area', 'universio' ),
+			'id' => 'before_list_widgets',
+			'description' => 'Shown before the list of posts in archive pages',
+			'before_widget' => '<aside id="%1$s" class="fx-column widget %2$s">',
+			'after_widget' => '</aside>',
+			'before_title' => '<h4 class="widget-title">',
+			'after_title' => '</h4>',
+		) );
+		register_sidebar( array(
+			'name' => __( 'After List Widgetized Area', 'universio' ),
+			'id' => 'after_list_widgets',
+			'description' => 'Shown after the list of posts in archive pages',
+			'before_widget' => '<aside id="%1$s" class="fx-column widget %2$s">',
+			'after_widget' => '</aside>',
+			'before_title' => '<h4 class="widget-title">',
+			'after_title' => '</h4>',
+		) );
 	}
 	add_action( 'widgets_init', 'universio_register_widgets' );
 endif;

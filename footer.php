@@ -10,17 +10,17 @@ $settings = universio_get_settings();
 $footer_widgets_columns = $settings['footer_widgets_columns'];
 ?>
 <?php if ( is_active_sidebar( 'footer_widgets' ) ) : ?>
-	<div class="fx-padding-all site-sidebar-footer">
+	<div class="fx-padding-all site-footer-widgets">
 		<div class="widget-area widget-area-footer">
 			<div class="fx-columns fx-columns-<?php echo $footer_widgets_columns; ?>">
-			<?php if ( ! dynamic_sidebar( 'footer_widgets' ) ) : // footer widgetized area ?>
+			<?php if ( ! dynamic_sidebar( 'footer_widgets' ) ) : ?>
 				<?php
-					// show nothing if there is no widgets in footer sidebar
+					// show nothing if there is no widgets
 				?>
-			<?php endif; // end of the sidebar widgetized area ?>
+			<?php endif; ?>
 			</div><!-- .fx-columns -->
 		</div><!-- .widget-area .widget-area-footer -->
-	</div><!-- .fx-padding-all -->
+	</div><!-- .fx-padding-all .site-footer-widgets -->
 <?php endif; ?>
 
 
