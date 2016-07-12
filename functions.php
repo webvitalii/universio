@@ -314,7 +314,7 @@ endif;
 
 
 if ( ! function_exists( 'universio_post_author' ) ) :
-	function universio_post_author() { // author
+	function universio_post_author() {
 		global $authordata;
 		if ( !is_object( $authordata ) )
 			return false;
@@ -336,7 +336,7 @@ endif;
 
 
 if ( ! function_exists( 'universio_post_categories' ) ) :
-	function universio_post_categories() { // list of categories
+	function universio_post_categories() {
 		$post_categories = get_the_category_list( __( ', ', 'universio' ) );
 		if ( !empty( $post_categories ) ) {
 			return '<span class="entry-meta-item entry-meta-categories"><i class="ionicon ion-ios-folder fx-icon fx-icon-20" title="'.esc_attr( __( 'Categories', 'universio' ) ).'"></i> '.$post_categories.'</span>'."\n";
@@ -348,7 +348,7 @@ endif;
 
 
 if ( ! function_exists( 'universio_post_tags' ) ) :
-	function universio_post_tags() { // list of tags
+	function universio_post_tags() {
 		$post_tags = get_the_tag_list( '', __( ', ', 'universio' ), '' );
 		if( !empty( $post_tags ) ){
 			return '<span class="entry-meta-item entry-meta-tags"><i class="ionicon ion-ios-pricetag fx-icon fx-icon-20" title="'.esc_attr( __( 'Tags', 'universio' ) ).'"></i> '.$post_tags.'</span>'."\n";
@@ -360,7 +360,7 @@ endif;
 
 
 if ( ! function_exists( 'universio_post_meta' ) ) :
-	function universio_post_meta() { // post meta
+	function universio_post_meta() {
 		$post_meta = '<div class="entry-meta-row">'."\n" . universio_post_sticky() . universio_post_author() . universio_post_date() . universio_comments_count() . universio_post_categories() . '</div>'."\n";
 		$post_tags = universio_post_tags();
 		if( !empty( $post_tags ) && is_single() ){
@@ -474,7 +474,7 @@ endif;
 
 
 if ( ! function_exists( 'universio_wp_head' ) ) :
-	function universio_wp_head() { // output content to the head section
+	function universio_wp_head() {
 
 		$settings = universio_get_settings();
 		$code_head = $settings['code_head'];
@@ -495,14 +495,13 @@ if ( ! function_exists( 'universio_wp_head' ) ) :
 			echo $code_head;
 			echo "\n".'<!-- end of Universio head code -->'."\n";
 		}
-		
 	}
 	add_action( 'wp_head', 'universio_wp_head' );
 endif;
 
 
 if ( ! function_exists( 'universio_wp_footer' ) ) :
-	function universio_wp_footer() { // output content to the footer section
+	function universio_wp_footer() {
 
 		$settings = universio_get_settings();
 		$code_footer = $settings['code_footer'];
@@ -515,7 +514,6 @@ if ( ! function_exists( 'universio_wp_footer' ) ) :
 			echo $code_footer;
 			echo "\n".'<!-- end of Universio footer code -->'."\n";
 		}
-		
 		
 		if ( ! empty( $ga_code ) ) {
 			if( !is_user_logged_in() || ( is_user_logged_in() && !$ga_code_hide_if_loggedin ) ) {
@@ -534,7 +532,6 @@ if ( ! function_exists( 'universio_wp_footer' ) ) :
 				echo "\n".'<!-- end of Universio Google Analytics code -->'."\n";
 			}
 		}
-
 	}
 	add_action( 'wp_footer', 'universio_wp_footer' );
 endif;
