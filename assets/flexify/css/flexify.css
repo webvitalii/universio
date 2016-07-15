@@ -129,8 +129,6 @@ template {
 
 /* ========== typography ========== */
 
-/* ---------- typography - general ---------- */
-
 .fx-wrap b,
 .fx-wrap strong {
 	font-weight: bold;
@@ -1373,9 +1371,6 @@ template {
 /* ========== columns ========== */
 
 .fx-columns {
-	-webkit-column-count: 2;
-	-moz-column-count: 2;
-	column-count: 2;
 	-webkit-column-gap: 30px;
 	-moz-column-gap: 30px;
 	column-gap: 30px;
@@ -1436,6 +1431,21 @@ template {
 	/* to fix the issue when bottom margin can go to the next column */
 	display: inline-block;
 	width: 100%;
+}
+
+@media (max-width: 543px) {
+	.fx-columns-1,
+	.fx-columns-2,
+	.fx-columns-3,
+	.fx-columns-4,
+	.fx-columns-5,
+	.fx-columns-6,
+	.fx-columns-7,
+	.fx-columns-8 {
+		-webkit-column-count: 1;
+		-moz-column-count: 1;
+		column-count: 1;
+	}
 }
 
 /* ========== labels ========== */
