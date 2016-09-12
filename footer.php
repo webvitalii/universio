@@ -36,9 +36,9 @@ $footer_widgets_columns = $settings['footer_widgets_columns'];
 
 		<div class="fx-box-sm-4 fx-padding-all fx-text-right">
 			<?php _e( 'Powered by', 'universio' ); ?>
-			<!--<a href="http://wordpress.org/" title="<?php _e( 'WordPress CMS', 'universio' ); ?>" target="_blank"><i class="ionicon ion-social-wordpress-outline fx-icon fx-icon-20"></i><?php _e( 'WordPress', 'universio' ); ?></a>-->
+			<!--<a href="//wordpress.org/" title="<?php _e( 'WordPress CMS', 'universio' ); ?>" target="_blank"><i class="ionicon ion-social-wordpress-outline fx-icon fx-icon-20"></i><?php _e( 'WordPress', 'universio' ); ?></a>-->
 			<?php //_e( '&', 'universio' ); ?>
-			<a href="http://codecanyon.net/user/webvitalii/portfolio?ref=webvitalii" title="<?php _e( 'Responsive WordPress theme', 'universio' ); ?>" target="_blank"><?php _e( 'Universio', 'universio' ); ?></a>
+			<a href="//vitalii.webio.ca/themes/universio/" title="<?php _e( 'Responsive and Flexible WordPress Theme', 'universio' ); ?>" target="_blank"><?php _e( 'Universio', 'universio' ); ?></a>
 
 			<a href="<?php echo esc_url( get_bloginfo( 'rss2_url' ) ); ?>" class="rss-feed-link" title="<?php echo esc_attr( __( 'Posts RSS feed', 'universio' ) ); ?>"><i class="ionicon ion-social-rss fx-icon fx-icon-20"></i></a>
 			<a href="<?php echo esc_url( get_bloginfo( 'comments_rss2_url' ) ); ?>" class="rss-feed-link" title="<?php echo esc_attr( __( 'Comments RSS feed', 'universio' ) ); ?>"><i class="ionicon ion-social-rss fx-icon fx-icon-20"></i></a>
