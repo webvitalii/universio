@@ -7,6 +7,8 @@ include( 'inc/universio-functions.php' );
 
 include( 'inc/universio-settings.php' );
 
+include( 'inc/universio-shortcode-btn.php' );
+
 
 if ( ! isset( $content_width ) ) {
 	$content_width = 1200;
